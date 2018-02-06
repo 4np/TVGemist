@@ -1,0 +1,6 @@
+framework module Pods_TVGemistAbstract_TVGemist {
+  umbrella header "Pods-TVGemistAbstract-TVGemist-umbrella.h"
+
+  export *
+  module * { export * }
+}

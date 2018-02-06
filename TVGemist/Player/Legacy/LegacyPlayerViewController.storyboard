@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oMb-CF-d38">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Legacy Player View Controller-->
+        <scene sceneID="Hx7-0Q-8ww">
+            <objects>
+                <viewController id="oMb-CF-d38" customClass="LegacyPlayerViewController" customModule="NPO" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g1M-US-ONK"/>
+                        <viewControllerLayoutGuide type="bottom" id="UnL-dr-k61"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xfL-Xe-iix">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAL-fg-fWc" customClass="PlayerView" customModule="NPO" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KAL-fg-fWc" firstAttribute="leading" secondItem="xfL-Xe-iix" secondAttribute="leading" id="bEn-Dj-MZ6"/>
+                            <constraint firstAttribute="bottom" secondItem="KAL-fg-fWc" secondAttribute="bottom" id="csw-QN-XBl"/>
+                            <constraint firstAttribute="trailing" secondItem="KAL-fg-fWc" secondAttribute="trailing" id="p7W-jx-wwf"/>
+                            <constraint firstItem="KAL-fg-fWc" firstAttribute="top" secondItem="xfL-Xe-iix" secondAttribute="top" id="qC8-EF-1SQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6CQ-PR-qIx"/>
+                    </view>
+                    <connections>
+                        <outlet property="playerView" destination="KAL-fg-fWc" id="0lz-h6-Zik"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uyz-ZR-0pB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-20" y="66"/>
+        </scene>
+    </scenes>
+</document>

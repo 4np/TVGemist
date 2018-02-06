@@ -1,0 +1,799 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B8668BD14AC7CC9F07FF227 /* Pods_TVGemistAbstract_TVGemist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10EA38BEA2ADAFD75284609 /* Pods_TVGemistAbstract_TVGemist.framework */; };
+		F3047D9F2029F012000C48F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3047D9E2029F012000C48F9 /* AppDelegate.swift */; };
+		F3047DA42029F012000C48F9 /* TVGemist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3047DA22029F012000C48F9 /* TVGemist.xcdatamodeld */; };
+		F3047DB42029F012000C48F9 /* TVGemistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3047DB32029F012000C48F9 /* TVGemistTests.swift */; };
+		F3047DBF2029F012000C48F9 /* TVGemistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3047DBE2029F012000C48F9 /* TVGemistUITests.swift */; };
+		F311085F2029F62E006539CA /* ProgramCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F311085D2029F62D006539CA /* ProgramCollectionViewCell.xib */; };
+		F31108602029F62E006539CA /* ProgramCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F311085E2029F62E006539CA /* ProgramCollectionViewCell.swift */; };
+		F3FD1D582029F2450099C247 /* LoggerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D562029F2440099C247 /* LoggerWrapper.swift */; };
+		F3FD1D592029F2450099C247 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D572029F2440099C247 /* Utilities.swift */; };
+		F3FD1D612029F2670099C247 /* String+i18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D5B2029F2670099C247 /* String+i18n.swift */; };
+		F3FD1D622029F2670099C247 /* UIView+fromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D5C2029F2670099C247 /* UIView+fromNib.swift */; };
+		F3FD1D632029F2670099C247 /* UIViewController+fromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D5D2029F2670099C247 /* UIViewController+fromNib.swift */; };
+		F3FD1D642029F2670099C247 /* UIImage+scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D5E2029F2670099C247 /* UIImage+scaling.swift */; };
+		F3FD1D652029F2670099C247 /* UIImage+faceAwareScaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D5F2029F2670099C247 /* UIImage+faceAwareScaling.swift */; };
+		F3FD1D662029F2670099C247 /* UIViewController+fromStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D602029F2670099C247 /* UIViewController+fromStoryboard.swift */; };
+		F3FD1D732029F2CC0099C247 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D6F2029F2CC0099C247 /* FilterTableViewCell.swift */; };
+		F3FD1D742029F2CC0099C247 /* ProgramsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D702029F2CC0099C247 /* ProgramsDetailViewController.swift */; };
+		F3FD1D752029F2CC0099C247 /* ProgramsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D712029F2CC0099C247 /* ProgramsSplitViewController.swift */; };
+		F3FD1D762029F2CC0099C247 /* ProgramsMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D722029F2CC0099C247 /* ProgramsMasterViewController.swift */; };
+		F3FD1D7E2029F2E20099C247 /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D782029F2E20099C247 /* ProgramViewController.swift */; };
+		F3FD1D7F2029F2E20099C247 /* EpisodeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3FD1D792029F2E20099C247 /* EpisodeCollectionViewCell.xib */; };
+		F3FD1D802029F2E20099C247 /* ProgramCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3FD1D7A2029F2E20099C247 /* ProgramCollectionReusableView.xib */; };
+		F3FD1D812029F2E20099C247 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D7B2029F2E20099C247 /* EpisodeCollectionViewCell.swift */; };
+		F3FD1D822029F2E20099C247 /* ProgramViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3FD1D7C2029F2E20099C247 /* ProgramViewController.storyboard */; };
+		F3FD1D832029F2E20099C247 /* ProgramCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D7D2029F2E20099C247 /* ProgramCollectionReusableView.swift */; };
+		F3FD1D882029F3090099C247 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D872029F3090099C247 /* PlayerView.swift */; };
+		F3FD1D8B2029F3110099C247 /* LegacyPlayerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3FD1D892029F3110099C247 /* LegacyPlayerViewController.storyboard */; };
+		F3FD1D8C2029F3110099C247 /* LegacyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D8A2029F3110099C247 /* LegacyPlayerViewController.swift */; };
+		F3FD1D8E2029F3180099C247 /* FairPlayPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D8D2029F3170099C247 /* FairPlayPlayerViewController.swift */; };
+		F3FD1D902029F3260099C247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FD1D8F2029F3260099C247 /* Assets.xcassets */; };
+		F3FD1D922029F3910099C247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3FD1D912029F3910099C247 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F3047DB02029F012000C48F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3047D932029F011000C48F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3047D9A2029F011000C48F9;
+			remoteInfo = TVGemist;
+		};
+		F3047DBB2029F012000C48F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3047D932029F011000C48F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3047D9A2029F011000C48F9;
+			remoteInfo = TVGemist;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		240FC968577850A907B1D347 /* Pods-TVGemistAbstract-TVGemist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVGemistAbstract-TVGemist.release.xcconfig"; path = "Pods/Target Support Files/Pods-TVGemistAbstract-TVGemist/Pods-TVGemistAbstract-TVGemist.release.xcconfig"; sourceTree = "<group>"; };
+		87543883403910034B7C1B7D /* Pods-TVGemistAbstract-TVGemist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVGemistAbstract-TVGemist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TVGemistAbstract-TVGemist/Pods-TVGemistAbstract-TVGemist.debug.xcconfig"; sourceTree = "<group>"; };
+		F10EA38BEA2ADAFD75284609 /* Pods_TVGemistAbstract_TVGemist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVGemistAbstract_TVGemist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3047D9B2029F012000C48F9 /* TVGemist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVGemist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3047D9E2029F012000C48F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F3047DA32029F012000C48F9 /* TVGemist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVGemist.xcdatamodel; sourceTree = "<group>"; };
+		F3047DAA2029F012000C48F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3047DAF2029F012000C48F9 /* TVGemistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVGemistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3047DB32029F012000C48F9 /* TVGemistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGemistTests.swift; sourceTree = "<group>"; };
+		F3047DB52029F012000C48F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3047DBA2029F012000C48F9 /* TVGemistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVGemistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3047DBE2029F012000C48F9 /* TVGemistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGemistUITests.swift; sourceTree = "<group>"; };
+		F3047DC02029F012000C48F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F311085D2029F62D006539CA /* ProgramCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramCollectionViewCell.xib; sourceTree = "<group>"; };
+		F311085E2029F62E006539CA /* ProgramCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramCollectionViewCell.swift; sourceTree = "<group>"; };
+		F3FD1D562029F2440099C247 /* LoggerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerWrapper.swift; sourceTree = "<group>"; };
+		F3FD1D572029F2440099C247 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		F3FD1D5B2029F2670099C247 /* String+i18n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+i18n.swift"; sourceTree = "<group>"; };
+		F3FD1D5C2029F2670099C247 /* UIView+fromNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+fromNib.swift"; sourceTree = "<group>"; };
+		F3FD1D5D2029F2670099C247 /* UIViewController+fromNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+fromNib.swift"; sourceTree = "<group>"; };
+		F3FD1D5E2029F2670099C247 /* UIImage+scaling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+scaling.swift"; sourceTree = "<group>"; };
+		F3FD1D5F2029F2670099C247 /* UIImage+faceAwareScaling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+faceAwareScaling.swift"; sourceTree = "<group>"; };
+		F3FD1D602029F2670099C247 /* UIViewController+fromStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+fromStoryboard.swift"; sourceTree = "<group>"; };
+		F3FD1D6F2029F2CC0099C247 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		F3FD1D702029F2CC0099C247 /* ProgramsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramsDetailViewController.swift; sourceTree = "<group>"; };
+		F3FD1D712029F2CC0099C247 /* ProgramsSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramsSplitViewController.swift; sourceTree = "<group>"; };
+		F3FD1D722029F2CC0099C247 /* ProgramsMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramsMasterViewController.swift; sourceTree = "<group>"; };
+		F3FD1D782029F2E20099C247 /* ProgramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
+		F3FD1D792029F2E20099C247 /* EpisodeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EpisodeCollectionViewCell.xib; sourceTree = "<group>"; };
+		F3FD1D7A2029F2E20099C247 /* ProgramCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramCollectionReusableView.xib; sourceTree = "<group>"; };
+		F3FD1D7B2029F2E20099C247 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
+		F3FD1D7C2029F2E20099C247 /* ProgramViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProgramViewController.storyboard; sourceTree = "<group>"; };
+		F3FD1D7D2029F2E20099C247 /* ProgramCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramCollectionReusableView.swift; sourceTree = "<group>"; };
+		F3FD1D872029F3090099C247 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		F3FD1D892029F3110099C247 /* LegacyPlayerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LegacyPlayerViewController.storyboard; sourceTree = "<group>"; };
+		F3FD1D8A2029F3110099C247 /* LegacyPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegacyPlayerViewController.swift; sourceTree = "<group>"; };
+		F3FD1D8D2029F3170099C247 /* FairPlayPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FairPlayPlayerViewController.swift; sourceTree = "<group>"; };
+		F3FD1D8F2029F3260099C247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3FD1D912029F3910099C247 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3047D982029F011000C48F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B8668BD14AC7CC9F07FF227 /* Pods_TVGemistAbstract_TVGemist.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3047DAC2029F012000C48F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3047DB72029F012000C48F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19EBF9B5CA1ECD0AE19BAA41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87543883403910034B7C1B7D /* Pods-TVGemistAbstract-TVGemist.debug.xcconfig */,
+				240FC968577850A907B1D347 /* Pods-TVGemistAbstract-TVGemist.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		277F4ABBF4EE92245272D4FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F10EA38BEA2ADAFD75284609 /* Pods_TVGemistAbstract_TVGemist.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3047D922029F011000C48F9 = {
+			isa = PBXGroup;
+			children = (
+				F3047D9D2029F012000C48F9 /* TVGemist */,
+				F3047DB22029F012000C48F9 /* TVGemistTests */,
+				F3047DBD2029F012000C48F9 /* TVGemistUITests */,
+				F3047D9C2029F012000C48F9 /* Products */,
+				19EBF9B5CA1ECD0AE19BAA41 /* Pods */,
+				277F4ABBF4EE92245272D4FA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F3047D9C2029F012000C48F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3047D9B2029F012000C48F9 /* TVGemist.app */,
+				F3047DAF2029F012000C48F9 /* TVGemistTests.xctest */,
+				F3047DBA2029F012000C48F9 /* TVGemistUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3047D9D2029F012000C48F9 /* TVGemist */ = {
+			isa = PBXGroup;
+			children = (
+				F3FD1D912029F3910099C247 /* Main.storyboard */,
+				F3FD1D772029F2D50099C247 /* Program */,
+				F3FD1D6E2029F2BF0099C247 /* Filtered Programs */,
+				F3FD1D842029F2EC0099C247 /* Player */,
+				F3047D9E2029F012000C48F9 /* AppDelegate.swift */,
+				F3FD1D562029F2440099C247 /* LoggerWrapper.swift */,
+				F3FD1D572029F2440099C247 /* Utilities.swift */,
+				F3047DAA2029F012000C48F9 /* Info.plist */,
+				F3FD1D8F2029F3260099C247 /* Assets.xcassets */,
+				F3047DA22029F012000C48F9 /* TVGemist.xcdatamodeld */,
+				F3FD1D5A2029F2530099C247 /* Extensions */,
+			);
+			path = TVGemist;
+			sourceTree = "<group>";
+		};
+		F3047DB22029F012000C48F9 /* TVGemistTests */ = {
+			isa = PBXGroup;
+			children = (
+				F3047DB32029F012000C48F9 /* TVGemistTests.swift */,
+				F3047DB52029F012000C48F9 /* Info.plist */,
+			);
+			path = TVGemistTests;
+			sourceTree = "<group>";
+		};
+		F3047DBD2029F012000C48F9 /* TVGemistUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F3047DBE2029F012000C48F9 /* TVGemistUITests.swift */,
+				F3047DC02029F012000C48F9 /* Info.plist */,
+			);
+			path = TVGemistUITests;
+			sourceTree = "<group>";
+		};
+		F3FD1D5A2029F2530099C247 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3FD1D5B2029F2670099C247 /* String+i18n.swift */,
+				F3FD1D5F2029F2670099C247 /* UIImage+faceAwareScaling.swift */,
+				F3FD1D5E2029F2670099C247 /* UIImage+scaling.swift */,
+				F3FD1D5C2029F2670099C247 /* UIView+fromNib.swift */,
+				F3FD1D5D2029F2670099C247 /* UIViewController+fromNib.swift */,
+				F3FD1D602029F2670099C247 /* UIViewController+fromStoryboard.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F3FD1D6E2029F2BF0099C247 /* Filtered Programs */ = {
+			isa = PBXGroup;
+			children = (
+				F3FD1D6F2029F2CC0099C247 /* FilterTableViewCell.swift */,
+				F3FD1D702029F2CC0099C247 /* ProgramsDetailViewController.swift */,
+				F3FD1D722029F2CC0099C247 /* ProgramsMasterViewController.swift */,
+				F3FD1D712029F2CC0099C247 /* ProgramsSplitViewController.swift */,
+				F311085E2029F62E006539CA /* ProgramCollectionViewCell.swift */,
+				F311085D2029F62D006539CA /* ProgramCollectionViewCell.xib */,
+			);
+			path = "Filtered Programs";
+			sourceTree = "<group>";
+		};
+		F3FD1D772029F2D50099C247 /* Program */ = {
+			isa = PBXGroup;
+			children = (
+				F3FD1D7B2029F2E20099C247 /* EpisodeCollectionViewCell.swift */,
+				F3FD1D792029F2E20099C247 /* EpisodeCollectionViewCell.xib */,
+				F3FD1D7D2029F2E20099C247 /* ProgramCollectionReusableView.swift */,
+				F3FD1D7A2029F2E20099C247 /* ProgramCollectionReusableView.xib */,
+				F3FD1D7C2029F2E20099C247 /* ProgramViewController.storyboard */,
+				F3FD1D782029F2E20099C247 /* ProgramViewController.swift */,
+			);
+			path = Program;
+			sourceTree = "<group>";
+		};
+		F3FD1D842029F2EC0099C247 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				F3FD1D872029F3090099C247 /* PlayerView.swift */,
+				F3FD1D862029F2FC0099C247 /* Fairplay */,
+				F3FD1D852029F2F60099C247 /* Legacy */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		F3FD1D852029F2F60099C247 /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				F3FD1D892029F3110099C247 /* LegacyPlayerViewController.storyboard */,
+				F3FD1D8A2029F3110099C247 /* LegacyPlayerViewController.swift */,
+			);
+			path = Legacy;
+			sourceTree = "<group>";
+		};
+		F3FD1D862029F2FC0099C247 /* Fairplay */ = {
+			isa = PBXGroup;
+			children = (
+				F3FD1D8D2029F3170099C247 /* FairPlayPlayerViewController.swift */,
+			);
+			path = Fairplay;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3047D9A2029F011000C48F9 /* TVGemist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3047DC32029F012000C48F9 /* Build configuration list for PBXNativeTarget "TVGemist" */;
+			buildPhases = (
+				94475DDAF9223CF9E2FD8DBD /* [CP] Check Pods Manifest.lock */,
+				F3047D972029F011000C48F9 /* Sources */,
+				F3047D982029F011000C48F9 /* Frameworks */,
+				F3047D992029F011000C48F9 /* Resources */,
+				243A2C552AF293F29E4915AF /* [CP] Embed Pods Frameworks */,
+				7E321D0096FAC47F042CBBA5 /* [CP] Copy Pods Resources */,
+				F311085C2029F5B3006539CA /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TVGemist;
+			productName = TVGemist;
+			productReference = F3047D9B2029F012000C48F9 /* TVGemist.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F3047DAE2029F012000C48F9 /* TVGemistTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3047DC62029F012000C48F9 /* Build configuration list for PBXNativeTarget "TVGemistTests" */;
+			buildPhases = (
+				F3047DAB2029F012000C48F9 /* Sources */,
+				F3047DAC2029F012000C48F9 /* Frameworks */,
+				F3047DAD2029F012000C48F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3047DB12029F012000C48F9 /* PBXTargetDependency */,
+			);
+			name = TVGemistTests;
+			productName = TVGemistTests;
+			productReference = F3047DAF2029F012000C48F9 /* TVGemistTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F3047DB92029F012000C48F9 /* TVGemistUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3047DC92029F012000C48F9 /* Build configuration list for PBXNativeTarget "TVGemistUITests" */;
+			buildPhases = (
+				F3047DB62029F012000C48F9 /* Sources */,
+				F3047DB72029F012000C48F9 /* Frameworks */,
+				F3047DB82029F012000C48F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3047DBC2029F012000C48F9 /* PBXTargetDependency */,
+			);
+			name = TVGemistUITests;
+			productName = TVGemistUITests;
+			productReference = F3047DBA2029F012000C48F9 /* TVGemistUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3047D932029F011000C48F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Jeroen Wesbeek";
+				TargetAttributes = {
+					F3047D9A2029F011000C48F9 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					F3047DAE2029F012000C48F9 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F3047D9A2029F011000C48F9;
+					};
+					F3047DB92029F012000C48F9 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F3047D9A2029F011000C48F9;
+					};
+				};
+			};
+			buildConfigurationList = F3047D962029F011000C48F9 /* Build configuration list for PBXProject "TVGemist" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3047D922029F011000C48F9;
+			productRefGroup = F3047D9C2029F012000C48F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3047D9A2029F011000C48F9 /* TVGemist */,
+				F3047DAE2029F012000C48F9 /* TVGemistTests */,
+				F3047DB92029F012000C48F9 /* TVGemistUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3047D992029F011000C48F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3FD1D922029F3910099C247 /* Main.storyboard in Resources */,
+				F3FD1D822029F2E20099C247 /* ProgramViewController.storyboard in Resources */,
+				F3FD1D7F2029F2E20099C247 /* EpisodeCollectionViewCell.xib in Resources */,
+				F3FD1D8B2029F3110099C247 /* LegacyPlayerViewController.storyboard in Resources */,
+				F3FD1D802029F2E20099C247 /* ProgramCollectionReusableView.xib in Resources */,
+				F3FD1D902029F3260099C247 /* Assets.xcassets in Resources */,
+				F311085F2029F62E006539CA /* ProgramCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3047DAD2029F012000C48F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3047DB82029F012000C48F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		243A2C552AF293F29E4915AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TVGemistAbstract-TVGemist/Pods-TVGemistAbstract-TVGemist-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NPOKit/NPOKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
+				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NPOKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TVGemistAbstract-TVGemist/Pods-TVGemistAbstract-TVGemist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E321D0096FAC47F042CBBA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TVGemistAbstract-TVGemist/Pods-TVGemistAbstract-TVGemist-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94475DDAF9223CF9E2FD8DBD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TVGemistAbstract-TVGemist-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F311085C2029F5B3006539CA /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3047D972029F011000C48F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3FD1D7E2029F2E20099C247 /* ProgramViewController.swift in Sources */,
+				F3FD1D582029F2450099C247 /* LoggerWrapper.swift in Sources */,
+				F3FD1D752029F2CC0099C247 /* ProgramsSplitViewController.swift in Sources */,
+				F3FD1D882029F3090099C247 /* PlayerView.swift in Sources */,
+				F3FD1D652029F2670099C247 /* UIImage+faceAwareScaling.swift in Sources */,
+				F3FD1D732029F2CC0099C247 /* FilterTableViewCell.swift in Sources */,
+				F3047DA42029F012000C48F9 /* TVGemist.xcdatamodeld in Sources */,
+				F3FD1D622029F2670099C247 /* UIView+fromNib.swift in Sources */,
+				F3FD1D592029F2450099C247 /* Utilities.swift in Sources */,
+				F3FD1D832029F2E20099C247 /* ProgramCollectionReusableView.swift in Sources */,
+				F3047D9F2029F012000C48F9 /* AppDelegate.swift in Sources */,
+				F3FD1D742029F2CC0099C247 /* ProgramsDetailViewController.swift in Sources */,
+				F31108602029F62E006539CA /* ProgramCollectionViewCell.swift in Sources */,
+				F3FD1D642029F2670099C247 /* UIImage+scaling.swift in Sources */,
+				F3FD1D812029F2E20099C247 /* EpisodeCollectionViewCell.swift in Sources */,
+				F3FD1D612029F2670099C247 /* String+i18n.swift in Sources */,
+				F3FD1D8E2029F3180099C247 /* FairPlayPlayerViewController.swift in Sources */,
+				F3FD1D632029F2670099C247 /* UIViewController+fromNib.swift in Sources */,
+				F3FD1D8C2029F3110099C247 /* LegacyPlayerViewController.swift in Sources */,
+				F3FD1D662029F2670099C247 /* UIViewController+fromStoryboard.swift in Sources */,
+				F3FD1D762029F2CC0099C247 /* ProgramsMasterViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3047DAB2029F012000C48F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3047DB42029F012000C48F9 /* TVGemistTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3047DB62029F012000C48F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3047DBF2029F012000C48F9 /* TVGemistUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F3047DB12029F012000C48F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3047D9A2029F011000C48F9 /* TVGemist */;
+			targetProxy = F3047DB02029F012000C48F9 /* PBXContainerItemProxy */;
+		};
+		F3047DBC2029F012000C48F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3047D9A2029F011000C48F9 /* TVGemist */;
+			targetProxy = F3047DBB2029F012000C48F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F3047DC12029F012000C48F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		F3047DC22029F012000C48F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3047DC42029F012000C48F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87543883403910034B7C1B7D /* Pods-TVGemistAbstract-TVGemist.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = USQSAZ85Q4;
+				INFOPLIST_FILE = TVGemist/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		F3047DC52029F012000C48F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240FC968577850A907B1D347 /* Pods-TVGemistAbstract-TVGemist.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = USQSAZ85Q4;
+				INFOPLIST_FILE = TVGemist/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Release;
+		};
+		F3047DC72029F012000C48F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = USQSAZ85Q4;
+				INFOPLIST_FILE = TVGemistTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVGemist.app/TVGemist";
+			};
+			name = Debug;
+		};
+		F3047DC82029F012000C48F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = USQSAZ85Q4;
+				INFOPLIST_FILE = TVGemistTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVGemist.app/TVGemist";
+			};
+			name = Release;
+		};
+		F3047DCA2029F012000C48F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = USQSAZ85Q4;
+				INFOPLIST_FILE = TVGemistUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = TVGemist;
+			};
+			name = Debug;
+		};
+		F3047DCB2029F012000C48F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = USQSAZ85Q4;
+				INFOPLIST_FILE = TVGemistUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = TVGemist;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3047D962029F011000C48F9 /* Build configuration list for PBXProject "TVGemist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3047DC12029F012000C48F9 /* Debug */,
+				F3047DC22029F012000C48F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3047DC32029F012000C48F9 /* Build configuration list for PBXNativeTarget "TVGemist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3047DC42029F012000C48F9 /* Debug */,
+				F3047DC52029F012000C48F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3047DC62029F012000C48F9 /* Build configuration list for PBXNativeTarget "TVGemistTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3047DC72029F012000C48F9 /* Debug */,
+				F3047DC82029F012000C48F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3047DC92029F012000C48F9 /* Build configuration list for PBXNativeTarget "TVGemistUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3047DCA2029F012000C48F9 /* Debug */,
+				F3047DCB2029F012000C48F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F3047DA22029F012000C48F9 /* TVGemist.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F3047DA32029F012000C48F9 /* TVGemist.xcdatamodel */,
+			);
+			currentVersion = F3047DA32029F012000C48F9 /* TVGemist.xcdatamodel */;
+			path = TVGemist.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F3047D932029F011000C48F9 /* Project object */;
+}

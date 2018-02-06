@@ -1,0 +1,31 @@
+PODS:
+  - NPOKit (0.0.2):
+    - NPOKit/Core (= 0.0.2)
+  - NPOKit/Core (0.0.2)
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - SwiftLint (0.24.2)
+  - XCGLogger (6.0.2):
+    - XCGLogger/Core (= 6.0.2)
+  - XCGLogger/Core (6.0.2):
+    - ObjcExceptionBridging
+
+DEPENDENCIES:
+  - NPOKit (from `../NPOKit`)
+  - SwiftLint
+  - XCGLogger
+
+EXTERNAL SOURCES:
+  NPOKit:
+    :path: ../NPOKit
+
+SPEC CHECKSUMS:
+  NPOKit: b04ef47524421add488922a8a8d3e7de039cedfc
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
+  XCGLogger: c9601cae9a8912de34a58666ba931ed3d624dd31
+
+PODFILE CHECKSUM: ddfa1f9d1534fc171749c7d1fbeb5015d69db8a3
+
+COCOAPODS: 1.4.0

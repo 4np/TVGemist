@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="13196" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProgramCollectionReusableView" customModule="NPO" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1920" height="700"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cT6-4q-8gf">
+                    <rect key="frame" x="0.0" y="60" width="1920" height="580"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMO-Lh-ChZ">
+                    <rect key="frame" x="110" y="409" width="1700" height="92"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <color key="textColor" red="1" green="0.66334546380000003" blue="0.13302034669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="1" height="1"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="van-eq-1kn">
+                    <rect key="frame" x="110" y="509" width="1700" height="36"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="1" height="1"/>
+                    <variation key="userInterfaceStyle=dark">
+                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Broadcasters &amp; Genres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3o-QY-MRI">
+                    <rect key="frame" x="110" y="553" width="1700" height="47"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="1" height="1"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cT6-4q-8gf" secondAttribute="trailing" id="3YA-Cc-gPl"/>
+                <constraint firstItem="cT6-4q-8gf" firstAttribute="bottom" secondItem="Pmt-tb-8Ig" secondAttribute="bottom" id="FmK-Os-8Eu"/>
+                <constraint firstItem="cT6-4q-8gf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="H6k-XN-7BE"/>
+                <constraint firstItem="Pmt-tb-8Ig" firstAttribute="bottom" secondItem="a3o-QY-MRI" secondAttribute="bottom" constant="40" id="HnB-Km-1mZ"/>
+                <constraint firstItem="Pmt-tb-8Ig" firstAttribute="trailing" secondItem="a3o-QY-MRI" secondAttribute="trailing" constant="20" id="IIO-oR-fNU"/>
+                <constraint firstItem="Pmt-tb-8Ig" firstAttribute="trailing" secondItem="van-eq-1kn" secondAttribute="trailing" constant="20" id="WQk-Ga-qIT"/>
+                <constraint firstItem="a3o-QY-MRI" firstAttribute="leading" secondItem="Pmt-tb-8Ig" secondAttribute="leading" constant="20" id="ZRU-6P-gkv"/>
+                <constraint firstItem="Pmt-tb-8Ig" firstAttribute="trailing" secondItem="JMO-Lh-ChZ" secondAttribute="trailing" constant="20" id="aht-DW-UTb"/>
+                <constraint firstItem="JMO-Lh-ChZ" firstAttribute="leading" secondItem="Pmt-tb-8Ig" secondAttribute="leading" constant="20" id="gdP-Hw-TIT"/>
+                <constraint firstItem="van-eq-1kn" firstAttribute="top" secondItem="JMO-Lh-ChZ" secondAttribute="bottom" constant="8" id="lnD-2f-okq"/>
+                <constraint firstItem="van-eq-1kn" firstAttribute="leading" secondItem="Pmt-tb-8Ig" secondAttribute="leading" constant="20" id="rov-Kw-kJi"/>
+                <constraint firstItem="cT6-4q-8gf" firstAttribute="top" secondItem="Pmt-tb-8Ig" secondAttribute="top" id="s8K-tF-oH6"/>
+                <constraint firstItem="a3o-QY-MRI" firstAttribute="top" secondItem="van-eq-1kn" secondAttribute="bottom" constant="8" id="xlb-jt-WWz"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Pmt-tb-8Ig"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="van-eq-1kn" id="pSf-wB-byp"/>
+                <outlet property="detailsLabel" destination="a3o-QY-MRI" id="128-DX-7bQ"/>
+                <outlet property="headerImageView" destination="cT6-4q-8gf" id="eoG-z1-0wv"/>
+                <outlet property="titleLabel" destination="JMO-Lh-ChZ" id="f6E-l7-mmY"/>
+            </connections>
+            <point key="canvasLocation" x="51" y="-87"/>
+        </view>
+    </objects>
+</document>
