@@ -1,9 +1,9 @@
 //
 //  LegacyPlayerViewController.swift
-//  NPO
+//  TVGemist
 //
 //  Created by Jeroen Wesbeek on 07/12/2017.
-//  Copyright © 2017 Jeroen Wesbeek. All rights reserved.
+//  Copyright © 2018 Jeroen Wesbeek. All rights reserved.
 //
 
 import Foundation

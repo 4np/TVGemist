@@ -1,9 +1,9 @@
 //
 //  ProgramCollectionViewCell.swift
-//  NPO
+//  TVGemist
 //
 //  Created by Jeroen Wesbeek on 30/06/2017.
-//  Copyright © 2017 Jeroen Wesbeek. All rights reserved.
+//  Copyright © 2018 Jeroen Wesbeek. All rights reserved.
 //
 
 import Foundation
@@ -69,12 +69,6 @@ class ProgramCollectionViewCell: UICollectionViewCell {
         if let logo = program.channel?.logo {
             channelLogoImageView.image = logo
         }
-        
-        // disable when this can only be viewed
-        // using a NPO Plus account
-        if program.isOnlyOnNPOPlus {
-            nameLabel.text = "+++[\(program.title)]+++"
-        }
     }
     
     // MARK: Default image
@@ -95,7 +89,9 @@ class ProgramCollectionViewCell: UICollectionViewCell {
             switch result {
             case .success(let image, let task):
                 guard task == self?.task else { return }
-                self?.imageView.image = image.aspectScaled(toFill: size)
+                let scaledImage = image.aspectScaled(toFill: size)
+                // tint the image red when the program cannot be watched
+                self?.imageView.image = (program.isOnlyOnNPOPlus) ? scaledImage.tint(with: .red) : scaledImage
             case .failure(let error as NPOError):
                 log.error("Could not download collection image for program \(program) and size \(size) (\(error.localizedDescription))")
             case.failure(let error):

@@ -1,9 +1,9 @@
 //
 //  ProgramViewController.swift
-//  NPO
+//  TVGemist
 //
 //  Created by Jeroen Wesbeek on 29/10/2017.
-//  Copyright © 2017 Jeroen Wesbeek. All rights reserved.
+//  Copyright © 2018 Jeroen Wesbeek. All rights reserved.
 //
 
 import UIKit
@@ -141,20 +141,45 @@ extension ProgramViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        play(episode: episodes[indexPath.row])
+        let episode = episodes[indexPath.row]
+        
+        // check if we can play this episode
+        if episode.isOnlyOnNPOPlus {
+            // no, display a warning
+            displayNPOPlusWarning(for: episode)
+        } else {
+            // play episode
+            play(episode: episodes[indexPath.row])
+        }
+    }
+    
+    private func displayNPOPlusWarning(for episode: Episode) {
+        // i18n
+        let titleFormat = "'%@' is not available".localized(withComment: "Episode not available alert title")
+        let title = String.localizedStringWithFormat(titleFormat, episode.episodeTitle ?? episode.title)
+        let messageFormat = "This episode is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\n\"%@\"".localized(withComment: "Episode not available alert message")
+        let message = String.localizedStringWithFormat(messageFormat, episode.description ?? "")
+        
+        // create alert
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: String.okAlertAction, style: .cancel) { _ in
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(cancelAction)
+        
+        // present alert
+        present(alertController, animated: true, completion: nil)
     }
 }
 
 // MARK: Playback
 extension ProgramViewController {
     private func play(episode: Episode) {
-//        let isFairPlayEnabled = false
-//
-//        if isFairPlayEnabled {
-//            log.error("FairPlay support not implemented")
-//        } else {
+        if Utilities.isFairPlayEnabled {
+            log.error("FairPlay support not implemented")
+        } else {
             legacyPlay(episode: episode)
-//        }
+        }
     }
     
     private func legacyPlay(episode: Episode) {

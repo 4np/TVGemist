@@ -1,4 +1,4 @@
-# ![Apple TV](https://cloud.githubusercontent.com/assets/1049693/11407062/c1891a92-93b0-11e5-9270-745cf4fa4152.png) TVGemist
+# tv TV Gemist
 
 [![Build Status](https://travis-ci.org/4np/TVGemist.svg?branch=master)](https://travis-ci.org/4np/TVGemist)
 [![Release](https://img.shields.io/github/release/4np/TVGemist.svg)](https://github.com/4np/TVGemist/releases/latest)
@@ -8,21 +8,21 @@
 [![Open Issues](https://img.shields.io/github/issues/4np/TVGemist.svg?maxAge=3600)](https://github.com/4np/TVGemist/issues)
 [![Closed Issues](https://img.shields.io/github/issues-closed/4np/TVGemist.svg?maxAge=3600)](https://github.com/4np/TVGemist/issues?q=is%3Aissue+is%3Aclosed)
 
-```TVGemist``` is an unofficial native ```Uitzending Gemist``` and ```NPO Live``` application for Apple TV developed in [Swift](https://developer.apple.com/swift/). It will allow you to browse and watch all video streams of the Nederlandse Publieke Omroep's (e.g. NPO, the Dutch public broadcaster) [Uitzending Gemist](http://www.npo.nl/uitzending-gemist) website on your Apple TV.
+```TVGemist``` is an unofficial fast native ```Uitzending Gemist``` and ```NPO Live``` application for Apple TV developed in [Swift](https://developer.apple.com/swift/). It will allow you to browse and watch all video streams of the Nederlandse Publieke Omroep's (e.g. NPO, the Dutch public broadcaster) [Uitzending Gemist](http://www.npo.nl/uitzending-gemist) website on your Apple TV.
 
 _Note: this project is in active development, consider this alpha..._
 
-# Contributing to TVGemist
+# Getting started
 
-Before sending a pull request, make sure you used the same coding style and that you lint your code using the most recent [SwiftLint](https://github.com/realm/SwiftLint) release:
+Please refer to Uitzending Gemist's [guide](https://github.com/4np/UitzendingGemist#okay-thats-all-great-but-how-do-i-get-this-on-my-) on how to get `TV Gemist` on your tv.
 
-```
-$ swiftlint
-...
-Done linting! Found 0 violations, 0 serious in 34 files.
-```
+# Screenshots
 
-_Note: the Xcode project will not be comitted to git._
+![Main TV](https://user-images.githubusercontent.com/1049693/35980552-4217fc5e-0ceb-11e8-99b7-8d648717db94.png)
+
+![Programs](https://user-images.githubusercontent.com/1049693/35980287-9ea51156-0cea-11e8-8c02-ffe4178bdd58.png)
+
+![Program overview](https://user-images.githubusercontent.com/1049693/35980288-9ec4b10a-0cea-11e8-9d35-cc17d59d9e83.png)
 
 # License
 

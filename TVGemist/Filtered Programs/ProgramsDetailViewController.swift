@@ -1,9 +1,9 @@
 //
 //  ProgramsDetailViewController.swift
-//  NPO
+//  TVGemist
 //
 //  Created by Jeroen Wesbeek on 14/12/2017.
-//  Copyright © 2017 Jeroen Wesbeek. All rights reserved.
+//  Copyright © 2018 Jeroen Wesbeek. All rights reserved.
 //
 
 import UIKit
@@ -11,6 +11,7 @@ import NPOKit
 
 protocol ProgramsDetailViewControllerDelegate: class {
     func didUpdateProgram(withImage image: UIImage?)
+    func setInitialBackgroundIfNeeded(for program: Program)
 }
 
 class ProgramsDetailViewController: UIViewController {
@@ -23,6 +24,16 @@ class ProgramsDetailViewController: UIViewController {
     }
     private var paginator: Paginator<Item>?
     private var programs = [Item]()
+    private var lastUpdated: Date?
+    //swiftlint:disable:next force_unwrapping
+    private var resetInterval: TimeInterval = TimeInterval(exactly: 60 * 20)! // every 20 minutes
+    private var shouldResetPaginator: Bool {
+        guard let lastUpdated = lastUpdated else { return true }
+        
+        let checkDate = Date(timeInterval: resetInterval, since: lastUpdated)
+        let now = Date()
+        return now > checkDate
+    }
     
     // MARK: Lifecycle
     
@@ -35,7 +46,10 @@ class ProgramsDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        resetPaginator()
+        
+        if shouldResetPaginator {
+            resetPaginator()
+        }
     }
     
     // MARK: Networking
@@ -51,11 +65,19 @@ class ProgramsDetailViewController: UIViewController {
     }
     
     private func setupPaginator() {
+        log.debug("Fetching programs")
+        
+        lastUpdated = Date()
+        
         paginator = NPOKit.shared.getProgramPaginator(using: programFilters) { [weak self] (result) in
             switch result {
             case .success(let paginator, let programs):
                 log.debug("Page \(paginator.page) of \(paginator.numberOfPages) (\(programs.count) filtered programs)")
                 self?.add(new: programs)
+                
+                if paginator.page == 1, let program = programs.first {
+                    self?.delegate?.setInitialBackgroundIfNeeded(for: program)
+                }
             case .failure(let error as NPOError):
                 log.error("Could not fetch filtered programs (\(error.localizedDescription))")
             case.failure(let error):
@@ -141,8 +163,32 @@ extension ProgramsDetailViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let programViewController = ProgramViewController.fromStoryboard()
-        programViewController.configure(withProgram: programs[indexPath.row])
-        present(programViewController, animated: true, completion: nil)
+        let program = programs[indexPath.row]
+        
+        if program.isOnlyOnNPOPlus {
+            displayNPOPlusWarning(for: program)
+        } else {
+            let programViewController = ProgramViewController.fromStoryboard()
+            programViewController.configure(withProgram: programs[indexPath.row])
+            present(programViewController, animated: true, completion: nil)
+        }
+    }
+    
+    private func displayNPOPlusWarning(for program: Program) {
+        // i18n
+        let titleFormat = "'%@' is not available".localized(withComment: "Program not available alert title")
+        let title = String.localizedStringWithFormat(titleFormat, program.title)
+        let messageFormat = "This program is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\"%@\"".localized(withComment: "Program not available alert message")
+        let message = String.localizedStringWithFormat(messageFormat, program.description ?? "")
+        
+        // create alert
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: String.okAlertAction, style: .cancel) { _ in
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(cancelAction)
+        
+        // present alert
+        present(alertController, animated: true, completion: nil)
     }
 }

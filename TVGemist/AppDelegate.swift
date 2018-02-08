@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import XCGLogger
 import NPOKit
+import GHKit
 
 let log = XCGLogger.default
 
@@ -27,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // bind logger to NPOKit
         NPOKit.shared.log = LoggerWrapper.shared
+        
+        // check for and report new releases every 6 hours
+        GHKit.shared.configure(withUser: "4np", repository: "TVGemist", shouldIncludePreReleases: false, applicationBundle: Bundle.main, interval: TimeInterval(exactly: 60 * 60 * 6))
         
         return true
     }

@@ -1,9 +1,9 @@
 //
 //  EpisodeCollectionViewCell.swift
-//  NPO
+//  TVGemist
 //
 //  Created by Jeroen Wesbeek on 29/10/2017.
-//  Copyright © 2017 Jeroen Wesbeek. All rights reserved.
+//  Copyright © 2018 Jeroen Wesbeek. All rights reserved.
 //
 
 import UIKit
@@ -73,12 +73,6 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
         
         // fetch the image for this episode
         getEpisodeImage(forEpisode: episode, andSize: imageView.focusedFrameGuide.layoutFrame.size)
-        
-        // disable when this can only be viewed
-        // using a NPO Plus account
-        if episode.isOnlyOnNPOPlus {
-            nameLabel.text = "+++[\(episode.title)]+++"
-        }
     }
     
     // MARK: Default image
@@ -99,7 +93,9 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
             switch result {
             case .success(let image, let task):
                 guard task == self?.task else { return }
-                self?.imageView.image = image.aspectScaled(toFill: size)
+                let scaledImage = image.aspectScaled(toFill: size)
+                // tint the image red when the program cannot be watched
+                self?.imageView.image = (episode.isOnlyOnNPOPlus) ? scaledImage.tint(with: .red) : scaledImage
             case .failure(let error as NPOError):
                 log.error("Could not download collection image for episode \(episode) and size \(size) (\(error.localizedDescription))")
             case.failure(let error):

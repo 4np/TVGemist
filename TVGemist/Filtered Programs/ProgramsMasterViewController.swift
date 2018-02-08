@@ -1,9 +1,9 @@
 //
 //  ProgramsMasterViewController.swift
-//  NPO
+//  TVGemist
 //
 //  Created by Jeroen Wesbeek on 14/12/2017.
-//  Copyright © 2017 Jeroen Wesbeek. All rights reserved.
+//  Copyright © 2018 Jeroen Wesbeek. All rights reserved.
 //
 
 import Foundation
@@ -19,6 +19,16 @@ class ProgramsMasterViewController: UITableViewController {
     private var paginator: Paginator<Item>?
     private var filters = [Filter]()
     weak var delegate: ProgramsMasterViewControllerDelegate?
+    private var lastUpdated: Date?
+    private var shouldRefreshFilters: Bool {
+        guard let lastUpdated = lastUpdated else { return true }
+        
+        // only refresh every other day to make sure the date filter headers reliably update
+        var calendar = Calendar.current
+        //swiftlint:disable:next force_unwrapping
+        calendar.timeZone = TimeZone(abbreviation: "CET")!
+        return !calendar.isDate(Date(), inSameDayAs: lastUpdated)
+    }
     
     // MARK: Lifecycle
     
@@ -38,12 +48,19 @@ class ProgramsMasterViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupPaginator()
+        
+        if shouldRefreshFilters {
+            // update filters
+            setupPaginator()
+            lastUpdated = Date()
+        }
     }
     
     // MARK: Networking
     
     private func setupPaginator() {
+        log.debug("Fetching program filters")
+        
         paginator = NPOKit.shared.getProgramPaginator { [weak self] (result) in
             switch result {
             case .success(let paginator, _):
@@ -128,8 +145,7 @@ class ProgramsMasterViewController: UITableViewController {
     }
     
     private func toggle(programFilter: ProgramFilter) {
-        log.debug("Toggle program filter: \(programFilter)")
-        
+        //log.debug("Toggle program filter: \(programFilter)")
         let section = filters.index(of: programFilter.filter)
         let row = programFilter.filter.options.index(of: programFilter.option)
         

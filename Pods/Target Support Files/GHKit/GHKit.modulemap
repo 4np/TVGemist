@@ -1,0 +1,6 @@
+framework module GHKit {
+  umbrella header "GHKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
