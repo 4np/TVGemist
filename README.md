@@ -5,6 +5,7 @@
 [![Commits Since](https://img.shields.io/github/commits-since/4np/TVGemist/0.0.1.svg?maxAge=3600)](https://github.com/4np/TVGemist/commits/master)
 [![Platform](https://img.shields.io/badge/platform-tvOS%2011-green.svg?maxAge=3600)](https://developer.apple.com/tvos/)
 [![Swift](https://img.shields.io/badge/language-Swift-ed523f.svg?maxAge=3600)](https://swift.org)
+[![codebeat badge](https://codebeat.co/badges/bf954277-cb4b-40d9-8cc2-94aff9568634)](https://codebeat.co/projects/github-com-4np-tvgemist-master)
 [![Open Issues](https://img.shields.io/github/issues/4np/TVGemist.svg?maxAge=3600)](https://github.com/4np/TVGemist/issues)
 [![Closed Issues](https://img.shields.io/github/issues-closed/4np/TVGemist.svg?maxAge=3600)](https://github.com/4np/TVGemist/issues?q=is%3Aissue+is%3Aclosed)
 

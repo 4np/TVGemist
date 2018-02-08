@@ -7,8 +7,7 @@ FILES=$dir/*.sh
 for f in $FILES
 do
     if [ $f != "$dir/$me" ]; then
-        echo $f
-        time source $f
+        source $f
     fi
 done
 
