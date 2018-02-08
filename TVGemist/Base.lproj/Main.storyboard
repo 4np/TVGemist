@@ -85,11 +85,11 @@
             </objects>
             <point key="canvasLocation" x="8667" y="1283"/>
         </scene>
-        <!--Programma's-->
+        <!--Programs-->
         <scene sceneID="iNV-js-rDC">
             <objects>
-                <splitViewController id="ngH-Gb-jbQ" customClass="ProgramsSplitViewController" customModule="TVGemist" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Programma's" id="ywL-it-49z"/>
+                <splitViewController id="ngH-Gb-jbQ" userLabel="Programs" customClass="ProgramsSplitViewController" customModule="TVGemist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Programs" id="ywL-it-49z" userLabel="Programs"/>
                     <connections>
                         <segue destination="tdJ-Fj-GO8" kind="relationship" relationship="masterViewController" id="eac-6X-BjM"/>
                         <segue destination="Pzj-pw-QDV" kind="relationship" relationship="detailViewController" id="mXN-Ae-eiY"/>

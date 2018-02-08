@@ -14,6 +14,8 @@
 		F3047DBF2029F012000C48F9 /* TVGemistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3047DBE2029F012000C48F9 /* TVGemistUITests.swift */; };
 		F311085F2029F62E006539CA /* ProgramCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F311085D2029F62D006539CA /* ProgramCollectionViewCell.xib */; };
 		F31108602029F62E006539CA /* ProgramCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F311085E2029F62E006539CA /* ProgramCollectionViewCell.swift */; };
+		F3AB6CDE202CB862008A4F73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F3AB6CDC202CB862008A4F73 /* Localizable.strings */; };
+		F3B1FDB3202CADAD00AB90CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1FDB5202CADAD00AB90CE /* Main.storyboard */; };
 		F3C8150D202C7FEF000D4A72 /* UIImage+tinted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8150C202C7FEF000D4A72 /* UIImage+tinted.swift */; };
 		F3FD1D582029F2450099C247 /* LoggerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D562029F2440099C247 /* LoggerWrapper.swift */; };
 		F3FD1D592029F2450099C247 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D572029F2440099C247 /* Utilities.swift */; };
@@ -37,7 +39,6 @@
 		F3FD1D8B2029F3110099C247 /* LegacyPlayerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3FD1D892029F3110099C247 /* LegacyPlayerViewController.storyboard */; };
 		F3FD1D8C2029F3110099C247 /* LegacyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D8A2029F3110099C247 /* LegacyPlayerViewController.swift */; };
 		F3FD1D902029F3260099C247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FD1D8F2029F3260099C247 /* Assets.xcassets */; };
-		F3FD1D922029F3910099C247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3FD1D912029F3910099C247 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,11 @@
 		F3047DC02029F012000C48F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F311085D2029F62D006539CA /* ProgramCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramCollectionViewCell.xib; sourceTree = "<group>"; };
 		F311085E2029F62E006539CA /* ProgramCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramCollectionViewCell.swift; sourceTree = "<group>"; };
+		F3AB6CD7202CB7A6008A4F73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		F3AB6CD8202CB7AD008A4F73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
+		F3AB6CDD202CB862008A4F73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = TVGemist/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F3AB6CDF202CB874008A4F73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = TVGemist/nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F3B1FDB4202CADAD00AB90CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3C8150C202C7FEF000D4A72 /* UIImage+tinted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+tinted.swift"; sourceTree = "<group>"; };
 		F3FD1D562029F2440099C247 /* LoggerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerWrapper.swift; sourceTree = "<group>"; };
 		F3FD1D572029F2440099C247 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -96,7 +102,6 @@
 		F3FD1D892029F3110099C247 /* LegacyPlayerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LegacyPlayerViewController.storyboard; sourceTree = "<group>"; };
 		F3FD1D8A2029F3110099C247 /* LegacyPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegacyPlayerViewController.swift; sourceTree = "<group>"; };
 		F3FD1D8F2029F3260099C247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F3FD1D912029F3910099C247 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +150,7 @@
 		F3047D922029F011000C48F9 = {
 			isa = PBXGroup;
 			children = (
+				F3AB6CDC202CB862008A4F73 /* Localizable.strings */,
 				F3047D9D2029F012000C48F9 /* TVGemist */,
 				F3047DB22029F012000C48F9 /* TVGemistTests */,
 				F3047DBD2029F012000C48F9 /* TVGemistUITests */,
@@ -169,7 +175,7 @@
 			children = (
 				F3047DAA2029F012000C48F9 /* Info.plist */,
 				F3047D9E2029F012000C48F9 /* AppDelegate.swift */,
-				F3FD1D912029F3910099C247 /* Main.storyboard */,
+				F3B1FDB5202CADAD00AB90CE /* Main.storyboard */,
 				F3FD1D6E2029F2BF0099C247 /* Filtered Programs */,
 				F3FD1D772029F2D50099C247 /* Program */,
 				F3FD1D842029F2EC0099C247 /* Player */,
@@ -201,10 +207,34 @@
 		F31108612029FCCE006539CA /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				F3AB6CCC202CB5B5008A4F73 /* localizations */,
 				F3FD1D8F2029F3260099C247 /* Assets.xcassets */,
 				F3047DA22029F012000C48F9 /* TVGemist.xcdatamodeld */,
 			);
 			path = Resourses;
+			sourceTree = "<group>";
+		};
+		F3AB6CCB202CB5A4008A4F73 /* en */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = en;
+			sourceTree = "<group>";
+		};
+		F3AB6CCC202CB5B5008A4F73 /* localizations */ = {
+			isa = PBXGroup;
+			children = (
+				F3AB6CCB202CB5A4008A4F73 /* en */,
+				F3AB6CCD202CB5CD008A4F73 /* nl */,
+			);
+			path = localizations;
+			sourceTree = "<group>";
+		};
+		F3AB6CCD202CB5CD008A4F73 /* nl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = nl;
 			sourceTree = "<group>";
 		};
 		F3BFEA05202C72E5000B668A /* Miscelaneous */ = {
@@ -365,8 +395,9 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
+				nl,
 			);
 			mainGroup = F3047D922029F011000C48F9;
 			productRefGroup = F3047D9C2029F012000C48F9 /* Products */;
@@ -385,11 +416,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3FD1D922029F3910099C247 /* Main.storyboard in Resources */,
+				F3B1FDB3202CADAD00AB90CE /* Main.storyboard in Resources */,
 				F3FD1D822029F2E20099C247 /* ProgramViewController.storyboard in Resources */,
 				F3FD1D7F2029F2E20099C247 /* EpisodeCollectionViewCell.xib in Resources */,
 				F3FD1D8B2029F3110099C247 /* LegacyPlayerViewController.storyboard in Resources */,
 				F3FD1D802029F2E20099C247 /* ProgramCollectionReusableView.xib in Resources */,
+				F3AB6CDE202CB862008A4F73 /* Localizable.strings in Resources */,
 				F3FD1D902029F3260099C247 /* Assets.xcassets in Resources */,
 				F311085F2029F62E006539CA /* ProgramCollectionViewCell.xib in Resources */,
 			);
@@ -545,11 +577,34 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		F3AB6CDC202CB862008A4F73 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3AB6CDD202CB862008A4F73 /* en */,
+				F3AB6CDF202CB874008A4F73 /* nl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		F3B1FDB5202CADAD00AB90CE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3B1FDB4202CADAD00AB90CE /* Base */,
+				F3AB6CD7202CB7A6008A4F73 /* en */,
+				F3AB6CD8202CB7AD008A4F73 /* nl */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		F3047DC12029F012000C48F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -606,6 +661,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -658,7 +714,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = USQSAZ85Q4;
 				INFOPLIST_FILE = TVGemist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemist;
@@ -675,7 +731,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = USQSAZ85Q4;
 				INFOPLIST_FILE = TVGemist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemist;

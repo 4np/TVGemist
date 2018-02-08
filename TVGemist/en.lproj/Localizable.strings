@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  TVGemist
+
+  Created by Jeroen Wesbeek on 08/02/2018.
+  Copyright © 2018 Jeroen Wesbeek. All rights reserved.
+*/
+
+/* Alert actions */
+"ok" = "Ok";
+
+/* Alert when a program or episode is not available */
+"'%@' is not available" = "'%@' is not available";
+"This program is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\"%@\"" = "This program is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\"%@\"";
+"This episode is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\n\"%@\"" = "This episode is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\n\"%@\"";
