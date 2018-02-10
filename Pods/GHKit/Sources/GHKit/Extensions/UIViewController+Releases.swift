@@ -55,7 +55,7 @@ extension UIViewController {
         // i18n
         let singularTitle = "New release available".localized(withComment: "New release alert title (singular)")
         let pluralTitleFormat = "You are %i releases behind".localized(withComment: "New release alert title (plural)")
-        let title = (count > 0) ? String.localizedStringWithFormat(pluralTitleFormat, count) : singularTitle
+        let title = (count > 1) ? String.localizedStringWithFormat(pluralTitleFormat, count) : singularTitle
         let messageFormat = "Version '%@' is available for download at '%@'.\n\n%@".localized(withComment: "New release alert message")
         let message = String.localizedStringWithFormat(messageFormat, version, release.url.absoluteString, release.body)
         

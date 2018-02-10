@@ -1,6 +1,6 @@
 {
   "name": "GHKit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "summary": "GHKit framework for version checks using GitHub releases",
   "homepage": "https://github.com/4np/GHKit",
   "license": {
@@ -22,7 +22,7 @@
   },
   "source": {
     "git": "https://github.com/4np/GHKit.git",
-    "tag": "0.0.2"
+    "tag": "0.0.3"
   },
   "default_subspecs": "Core",
   "subspecs": [

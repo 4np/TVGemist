@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/4np/GHKit.svg?branch=master)](https://travis-ci.org/4np/GHKit)
 [![Release](https://img.shields.io/github/release/4np/GHKit.svg)](https://github.com/4np/GHKit/releases/latest)
-[![Commits Since](https://img.shields.io/github/commits-since/4np/GHKit/0.0.2.svg?maxAge=3600)](https://github.com/4np/GHKit/commits/master)
+[![Commits Since](https://img.shields.io/github/commits-since/4np/GHKit/0.0.3.svg?maxAge=3600)](https://github.com/4np/GHKit/commits/master)
 [![Platform](https://img.shields.io/badge/platform-tvOS%2011-green.svg?maxAge=3600)](https://developer.apple.com/tvos/)
 [![Swift](https://img.shields.io/badge/language-Swift-ed523f.svg?maxAge=3600)](https://swift.org)
 [![Open Issues](https://img.shields.io/github/issues/4np/GHKit.svg?maxAge=3600)](https://github.com/4np/GHKit/issues)
@@ -29,7 +29,7 @@ pod 'NPOKit', :git => 'https://github.com/4np/GHKit.git'
 Add the following entry to your package's dependencies:
 
 ```swift
-.package(url: "https://github.com/4np/GHKit.git", from: "0.0.2")
+.package(url: "https://github.com/4np/GHKit.git", from: "0.0.3")
 ```
 
 ## Setup
@@ -81,6 +81,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ### Debugging
 
 In order you test, you could change the interval to 10 seconds (`TimeInterval(exactly: 10)`)
+
+## Internationalization / i18n
+
+Add the following strings to your `Localizable.strings` file(s):
+
+```
+/* GHKit - release alerts */
+"New release available" = "New release available";
+"You are %i releases behind" = "You are %i releases behind";
+"Version '%@' is available for download at '%@'.\n\n%@" = "Version '%@' is available for download at '%@'.\n\n%@";
+```
 
 ## How does it work?
 

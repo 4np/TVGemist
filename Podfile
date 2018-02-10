@@ -13,7 +13,7 @@ abstract_target 'TVGemistAbstract' do
         #pod 'GHKit', :path => '../GHKit'
 
         pod 'NPOKit', :git => 'https://github.com/4np/NPOKit.git', :tag => '0.0.4'
-        pod 'GHKit', :git => 'https://github.com/4np/GHKit.git', :tag => '0.0.2'
+        pod 'GHKit', :git => 'https://github.com/4np/GHKit.git', :tag => '0.0.3'
     end
 
     post_install do |installer|
