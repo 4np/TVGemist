@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ImageContainer: Codable {
+public struct ImageContainer: Codable {
     var original: NPOImage?
     var header: NPOImage?
     var gridTile: NPOImage?
@@ -18,6 +18,29 @@ struct ImageContainer: Codable {
     var playerPostPlay: NPOImage?
     var searchSuggestion: NPOImage?
     var chromecastPostPlay: NPOImage?
+    var title: String? {
+        if let title = original?.title {
+            return title
+        } else if let title = header?.title {
+            return title
+        } else if let title = gridTile?.title {
+            return title
+        } else if let title = laneTile?.title {
+            return title
+        } else if let title = playerPoster?.title {
+            return title
+        } else if let title = playerRecommendation?.title {
+            return title
+        } else if let title = playerPostPlay?.title {
+            return title
+        } else if let title = searchSuggestion?.title {
+            return title
+        } else if let title = chromecastPostPlay?.title {
+            return title
+        } else {
+            return nil
+        }
+    }
     
     enum CodingKeys: String, CodingKey {
         case original

@@ -12,7 +12,7 @@ abstract_target 'TVGemistAbstract' do
         #pod 'NPOKit', :path => '../NPOKit'
         #pod 'GHKit', :path => '../GHKit'
 
-        pod 'NPOKit', :git => 'https://github.com/4np/NPOKit.git', :tag => '0.0.3'
+        pod 'NPOKit', :git => 'https://github.com/4np/NPOKit.git', :tag => '0.0.4'
         pod 'GHKit', :git => 'https://github.com/4np/GHKit.git', :tag => '0.0.2'
     end
 

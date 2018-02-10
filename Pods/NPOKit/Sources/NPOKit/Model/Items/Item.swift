@@ -18,15 +18,25 @@ public enum ItemType: String, Codable {
     case fragment
 }
 
-public struct Item: Pageable {
-    var id: String
-    public private(set) var title: String
+public struct Item: Pageable, ImageFetchable {
+    var id: String?
+    private var itemTitle: String?
+    public var title: String {
+        // Check if the title was defined
+        if let title = self.itemTitle {
+            return title
+        }
+        
+        // In the rare occassion the title wasn't defined,
+        // try to obtain the title from the images
+        return self.images.title ?? "?"
+    }
     public private(set) var description: String?
     private var typeName: String
     private var channelName: String?
     public private(set) var genres: [GenreItem]
     public private(set) var broadcasters: [String]
-    var images: ImageContainer
+    public private(set) var images: ImageContainer
     public private(set) var isOnlyOnNPOPlus: Bool
     
     // franchise
@@ -52,7 +62,7 @@ public struct Item: Pageable {
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
-        case title
+        case itemTitle = "title"
         case description
         case typeName = "type"
         case channelName = "channel"
@@ -96,32 +106,13 @@ extension Item {
         guard let name = channelName, let channel = Channel(rawValue: name) else { return nil }
         return channel
     }
-    
-    // MARK: Image URLs
-    
-    var collectionImageURL: URL? {
-        // try to return the source in order of preference
-        if let source = images.gridTile?.formats.tablet?.source { // generally 320x180
-            return source
-        }
-        
-        return nil
-    }
-    
-    var headerImageURL: URL? {
-        // try to return the source in order of preference
-        if let source = images.header?.formats.tv?.source {
-            return source
-        }
-        
-        return nil
-    }
 }
 
 // MARK: CustomDebugStringConvertible
 
 extension Item: CustomDebugStringConvertible {
     public var debugDescription: String {
-        return "'\(title)' (\(id))"
+        let identifier = id ?? "unknown identifier"
+        return "'\(title)' (\(identifier))"
     }
 }

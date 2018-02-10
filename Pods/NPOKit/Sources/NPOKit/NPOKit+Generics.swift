@@ -13,25 +13,23 @@ public extension NPOKit {
     // MARK: Fetch model
     
     internal func fetchModel<T: Codable>(ofType type: T.Type, forEndpoint endPoint: String, postData: Data?, completionHandler: @escaping (Result<T>) -> Void) {
-        //swiftlint:disable:next force_unwrapping
-        let url = URL(string: endPoint, relativeTo: apiURL)!
+        guard let url = URL(string: endPoint, relativeTo: apiURL) else { return }
         fetchModel(ofType: type, forURL: url, postData: postData, completionHandler: completionHandler)
     }
     
     internal func fetchModel<T: Codable>(ofType type: T.Type, forLegacyEndpoint endPoint: String, postData: Data?, completionHandler: @escaping (Result<T>) -> Void) {
-        //swiftlint:disable:next force_unwrapping
-        let url = URL(string: endPoint, relativeTo: legacyAPIURL)!
+        guard let url = URL(string: endPoint, relativeTo: legacyAPIURL) else { return }
         fetchModel(ofType: type, forURL: url, postData: postData, completionHandler: completionHandler)
     }
     
     internal func fetchModel<T: Codable>(ofType type: T.Type, forURL url: URL, postData: Data?, completionHandler: @escaping (Result<T>) -> Void) {
         let task = dataTask(forUrl: url, postData: postData, cachePolicy: .reloadIgnoringLocalCacheData) { (result) in
-            let jsonData: Data
+            var jsonData: Data
 
             // check the request was successful
             switch result {
             case .success(let data, _):
-                jsonData = data
+                jsonData = data.transformed(for: type)
             case .failure(let error):
                 completionHandler(.failure(error))
                 return
@@ -81,10 +79,11 @@ public extension NPOKit {
         }
         
         // add post data if needed
-        if let data = postData {
+        if let data = postData, let postString = String(bytes: data, encoding: .utf8) {
             request.httpMethod = "POST"
             request.httpBody = data
-            log?.verbose("POST: \(request)")
+            log?.verbose("POST: \(request) \(data)")
+            log?.verbose("      \(postString)")
         } else {
             log?.verbose("GET : \(request)")
         }

@@ -1,5 +1,5 @@
 //
-//  Stream.swift
+//  FairPlayStream.swift
 //  NPO
 //
 //  Created by Jeroen Wesbeek on 31/10/2017.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-public struct Stream: Codable {
-    var url: URL
-    var licenseToken: String
-    var licenseServer: URL
-    var certificateURL: URL?
+public struct FairPlayStream: Codable {
+    public private(set) var url: URL
+    public private(set) var licenseToken: String
+    public private(set) var licenseServer: URL
+    public private(set) var certificateURL: URL?
     var profile: String
-    var drm: String
+    public private(set) var drm: String
     var ip: String
     var isLegacy: Bool
     var isLive: Bool

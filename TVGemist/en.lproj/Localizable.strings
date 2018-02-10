@@ -13,3 +13,11 @@
 "'%@' is not available" = "'%@' is not available";
 "This program is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\"%@\"" = "This program is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\"%@\"";
 "This episode is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\n\"%@\"" = "This episode is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\n\"%@\"";
+
+/* Live */
+"Next: %@ - %@" = "Next: %@ - %@";
+
+/* GHKit - release alerts */
+"New release available" = "New release available";
+"You are %i releases behind" = "You are %i releases behind";
+"Version '%@' is available for download at '%@'.\n\n%@" = "Version '%@' is available for download at '%@'.\n\n%@";

@@ -41,13 +41,30 @@ public extension NPOKit {
     
     // MARK: Public API
     
-    func fetchCollectionImage(for item: Item, completionHandler: @escaping (Result<(UXImage, URLSessionDataTask)>) -> Void) -> URLSessionDataTask? {
-        guard let url = item.collectionImageURL else { return nil }
+    func fetchOriginalImage(for item: ImageFetchable, completionHandler: @escaping (Result<(UXImage, URLSessionDataTask)>) -> Void) -> URLSessionDataTask? {
+        guard let url = item.originalImageURL else {
+            let error = NPOError.imageNotAvailable
+            completionHandler(.failure(error))
+            return nil
+        }
         return fetchImage(url: url, completionHandler: completionHandler)
     }
     
-    func fetchHeaderImage(for item: Item, completionHandler: @escaping (Result<(UXImage, URLSessionDataTask)>) -> Void) -> URLSessionDataTask? {
-        guard let url = item.headerImageURL else { return nil }
+    func fetchCollectionImage(for item: ImageFetchable, completionHandler: @escaping (Result<(UXImage, URLSessionDataTask)>) -> Void) -> URLSessionDataTask? {
+        guard let url = item.collectionImageURL else {
+            let error = NPOError.imageNotAvailable
+            completionHandler(.failure(error))
+            return nil
+        }
+        return fetchImage(url: url, completionHandler: completionHandler)
+    }
+    
+    func fetchHeaderImage(for item: ImageFetchable, completionHandler: @escaping (Result<(UXImage, URLSessionDataTask)>) -> Void) -> URLSessionDataTask? {
+        guard let url = item.headerImageURL else {
+            let error = NPOError.imageNotAvailable
+            completionHandler(.failure(error))
+            return nil
+        }
         return fetchImage(url: url, completionHandler: completionHandler)
     }
 }

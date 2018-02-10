@@ -99,6 +99,50 @@
             </objects>
             <point key="canvasLocation" x="6103" y="1861"/>
         </scene>
+        <!--Live-->
+        <scene sceneID="2Ue-4N-05X">
+            <objects>
+                <viewController id="gEy-uC-0le" customClass="LiveViewController" customModule="TVGemist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fX9-d8-Z03"/>
+                        <viewControllerLayoutGuide type="bottom" id="69b-58-XLF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N9T-2c-vAe">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="f9s-P5-85I">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="100" minimumInteritemSpacing="48" id="5KJ-c3-d8c">
+                                    <size key="itemSize" width="548" height="425"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="48" minY="100" maxX="48" maxY="100"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gEy-uC-0le" id="zeY-Sa-as4"/>
+                                    <outlet property="delegate" destination="gEy-uC-0le" id="1jK-t6-Yvr"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="f9s-P5-85I" firstAttribute="leading" secondItem="N9T-2c-vAe" secondAttribute="leading" id="Fuy-fo-Ii9"/>
+                            <constraint firstAttribute="bottom" secondItem="f9s-P5-85I" secondAttribute="bottom" id="d42-7R-SxC"/>
+                            <constraint firstAttribute="trailing" secondItem="f9s-P5-85I" secondAttribute="trailing" id="stN-Vm-kRG"/>
+                            <constraint firstItem="f9s-P5-85I" firstAttribute="top" secondItem="N9T-2c-vAe" secondAttribute="top" id="t0d-hJ-jOx"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Live" id="Ijo-Zm-n79"/>
+                    <connections>
+                        <outlet property="collectionView" destination="f9s-P5-85I" id="l6b-2F-MTL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nGa-tX-bGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6255" y="4749"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wlE-Zj-wRW">
             <objects>
@@ -111,11 +155,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="ngH-Gb-jbQ" kind="relationship" relationship="viewControllers" id="vth-QD-TqP"/>
+                        <segue destination="gEy-uC-0le" kind="relationship" relationship="viewControllers" id="c8G-A3-yfB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TV1-g1-PwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2968" y="-698"/>
+            <point key="canvasLocation" x="2956" y="1861"/>
         </scene>
     </scenes>
 </document>

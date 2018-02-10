@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import XCGLogger
 import NPOKit
 
 class ProgramViewController: UIViewController {
@@ -175,31 +174,9 @@ extension ProgramViewController: UICollectionViewDelegate {
 // MARK: Playback
 extension ProgramViewController {
     private func play(episode: Episode) {
-        if Utilities.isFairPlayEnabled {
-            log.error("FairPlay support not implemented")
-        } else {
-            legacyPlay(episode: episode)
-        }
-    }
-    
-    private func legacyPlay(episode: Episode) {
-        // play the legacy HLS Stream
-        NPOKit.shared.legacyPlaylist(for: episode) { [weak self] (result) in
-            switch result {
-            case .success(let legacyPlaylist):
-                self?.play(playlist: legacyPlaylist)
-            case .failure(let error as NPOError):
-                log.error("Could not fetch playlist for episode (\(error.localizedDescription))")
-            case.failure(let error):
-                log.error("Could not fetch playlist for episode (\(error.localizedDescription))")
-            }
-        }
-    }
-
-    private func play(playlist: LegacyPlaylist) {
-        let playerViewController = LegacyPlayerViewController.fromStoryboard()
+        let playerViewController = PlayerViewController()
         present(playerViewController, animated: true) {
-            playerViewController.play(playlist: playlist)
+            playerViewController.play(episode: episode)
         }
     }
 }

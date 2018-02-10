@@ -12,11 +12,16 @@
 		F3047DA42029F012000C48F9 /* TVGemist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3047DA22029F012000C48F9 /* TVGemist.xcdatamodeld */; };
 		F3047DB42029F012000C48F9 /* TVGemistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3047DB32029F012000C48F9 /* TVGemistTests.swift */; };
 		F3047DBF2029F012000C48F9 /* TVGemistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3047DBE2029F012000C48F9 /* TVGemistUITests.swift */; };
+		F3069D71202F3FD2001D8970 /* PlayerViewController+FairPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3069D70202F3FD2001D8970 /* PlayerViewController+FairPlay.swift */; };
+		F30C5EC8202F475A001DDBEB /* LiveChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C5EC7202F475A001DDBEB /* LiveChannelCollectionViewCell.swift */; };
+		F30C5ECA202F4769001DDBEB /* LiveChannelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30C5EC9202F4769001DDBEB /* LiveChannelCollectionViewCell.xib */; };
 		F311085F2029F62E006539CA /* ProgramCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F311085D2029F62D006539CA /* ProgramCollectionViewCell.xib */; };
 		F31108602029F62E006539CA /* ProgramCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F311085E2029F62E006539CA /* ProgramCollectionViewCell.swift */; };
+		F32B5F7D202E02C700A6BE99 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B5F7C202E02C700A6BE99 /* LiveViewController.swift */; };
 		F3AB6CDE202CB862008A4F73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F3AB6CDC202CB862008A4F73 /* Localizable.strings */; };
 		F3B1FDB3202CADAD00AB90CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1FDB5202CADAD00AB90CE /* Main.storyboard */; };
 		F3C8150D202C7FEF000D4A72 /* UIImage+tinted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8150C202C7FEF000D4A72 /* UIImage+tinted.swift */; };
+		F3E2F613202EFC9600668E15 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2F612202EFC9600668E15 /* PlayerViewController.swift */; };
 		F3FD1D582029F2450099C247 /* LoggerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D562029F2440099C247 /* LoggerWrapper.swift */; };
 		F3FD1D592029F2450099C247 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D572029F2440099C247 /* Utilities.swift */; };
 		F3FD1D612029F2670099C247 /* String+i18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D5B2029F2670099C247 /* String+i18n.swift */; };
@@ -35,9 +40,6 @@
 		F3FD1D812029F2E20099C247 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D7B2029F2E20099C247 /* EpisodeCollectionViewCell.swift */; };
 		F3FD1D822029F2E20099C247 /* ProgramViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3FD1D7C2029F2E20099C247 /* ProgramViewController.storyboard */; };
 		F3FD1D832029F2E20099C247 /* ProgramCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D7D2029F2E20099C247 /* ProgramCollectionReusableView.swift */; };
-		F3FD1D882029F3090099C247 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D872029F3090099C247 /* PlayerView.swift */; };
-		F3FD1D8B2029F3110099C247 /* LegacyPlayerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3FD1D892029F3110099C247 /* LegacyPlayerViewController.storyboard */; };
-		F3FD1D8C2029F3110099C247 /* LegacyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D8A2029F3110099C247 /* LegacyPlayerViewController.swift */; };
 		F3FD1D902029F3260099C247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FD1D8F2029F3260099C247 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -72,14 +74,19 @@
 		F3047DBA2029F012000C48F9 /* TVGemistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVGemistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3047DBE2029F012000C48F9 /* TVGemistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGemistUITests.swift; sourceTree = "<group>"; };
 		F3047DC02029F012000C48F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3069D70202F3FD2001D8970 /* PlayerViewController+FairPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerViewController+FairPlay.swift"; sourceTree = "<group>"; };
+		F30C5EC7202F475A001DDBEB /* LiveChannelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChannelCollectionViewCell.swift; sourceTree = "<group>"; };
+		F30C5EC9202F4769001DDBEB /* LiveChannelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveChannelCollectionViewCell.xib; sourceTree = "<group>"; };
 		F311085D2029F62D006539CA /* ProgramCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramCollectionViewCell.xib; sourceTree = "<group>"; };
 		F311085E2029F62E006539CA /* ProgramCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramCollectionViewCell.swift; sourceTree = "<group>"; };
+		F32B5F7C202E02C700A6BE99 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		F3AB6CD7202CB7A6008A4F73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		F3AB6CD8202CB7AD008A4F73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
 		F3AB6CDD202CB862008A4F73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = TVGemist/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F3AB6CDF202CB874008A4F73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = TVGemist/nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F3B1FDB4202CADAD00AB90CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3C8150C202C7FEF000D4A72 /* UIImage+tinted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+tinted.swift"; sourceTree = "<group>"; };
+		F3E2F612202EFC9600668E15 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		F3FD1D562029F2440099C247 /* LoggerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerWrapper.swift; sourceTree = "<group>"; };
 		F3FD1D572029F2440099C247 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F3FD1D5B2029F2670099C247 /* String+i18n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+i18n.swift"; sourceTree = "<group>"; };
@@ -98,9 +105,6 @@
 		F3FD1D7B2029F2E20099C247 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		F3FD1D7C2029F2E20099C247 /* ProgramViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProgramViewController.storyboard; sourceTree = "<group>"; };
 		F3FD1D7D2029F2E20099C247 /* ProgramCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramCollectionReusableView.swift; sourceTree = "<group>"; };
-		F3FD1D872029F3090099C247 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		F3FD1D892029F3110099C247 /* LegacyPlayerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LegacyPlayerViewController.storyboard; sourceTree = "<group>"; };
-		F3FD1D8A2029F3110099C247 /* LegacyPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegacyPlayerViewController.swift; sourceTree = "<group>"; };
 		F3FD1D8F2029F3260099C247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +182,7 @@
 				F3B1FDB5202CADAD00AB90CE /* Main.storyboard */,
 				F3FD1D6E2029F2BF0099C247 /* Filtered Programs */,
 				F3FD1D772029F2D50099C247 /* Program */,
+				F3AA2B8C202DBBCA0078E628 /* Live */,
 				F3FD1D842029F2EC0099C247 /* Player */,
 				F3BFEA05202C72E5000B668A /* Miscelaneous */,
 				F3FD1D5A2029F2530099C247 /* Extensions */,
@@ -212,6 +217,16 @@
 				F3047DA22029F012000C48F9 /* TVGemist.xcdatamodeld */,
 			);
 			path = Resourses;
+			sourceTree = "<group>";
+		};
+		F3AA2B8C202DBBCA0078E628 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				F32B5F7C202E02C700A6BE99 /* LiveViewController.swift */,
+				F30C5EC9202F4769001DDBEB /* LiveChannelCollectionViewCell.xib */,
+				F30C5EC7202F475A001DDBEB /* LiveChannelCollectionViewCell.swift */,
+			);
+			path = Live;
 			sourceTree = "<group>";
 		};
 		F3AB6CCB202CB5A4008A4F73 /* en */ = {
@@ -289,19 +304,10 @@
 		F3FD1D842029F2EC0099C247 /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				F3FD1D872029F3090099C247 /* PlayerView.swift */,
-				F3FD1D852029F2F60099C247 /* Legacy */,
+				F3E2F612202EFC9600668E15 /* PlayerViewController.swift */,
+				F3069D70202F3FD2001D8970 /* PlayerViewController+FairPlay.swift */,
 			);
 			path = Player;
-			sourceTree = "<group>";
-		};
-		F3FD1D852029F2F60099C247 /* Legacy */ = {
-			isa = PBXGroup;
-			children = (
-				F3FD1D892029F3110099C247 /* LegacyPlayerViewController.storyboard */,
-				F3FD1D8A2029F3110099C247 /* LegacyPlayerViewController.swift */,
-			);
-			path = Legacy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,10 +425,10 @@
 				F3B1FDB3202CADAD00AB90CE /* Main.storyboard in Resources */,
 				F3FD1D822029F2E20099C247 /* ProgramViewController.storyboard in Resources */,
 				F3FD1D7F2029F2E20099C247 /* EpisodeCollectionViewCell.xib in Resources */,
-				F3FD1D8B2029F3110099C247 /* LegacyPlayerViewController.storyboard in Resources */,
 				F3FD1D802029F2E20099C247 /* ProgramCollectionReusableView.xib in Resources */,
 				F3AB6CDE202CB862008A4F73 /* Localizable.strings in Resources */,
 				F3FD1D902029F3260099C247 /* Assets.xcassets in Resources */,
+				F30C5ECA202F4769001DDBEB /* LiveChannelCollectionViewCell.xib in Resources */,
 				F311085F2029F62E006539CA /* ProgramCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,15 +529,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3FD1D7E2029F2E20099C247 /* ProgramViewController.swift in Sources */,
+				F3069D71202F3FD2001D8970 /* PlayerViewController+FairPlay.swift in Sources */,
 				F3FD1D582029F2450099C247 /* LoggerWrapper.swift in Sources */,
 				F3FD1D752029F2CC0099C247 /* ProgramsSplitViewController.swift in Sources */,
-				F3FD1D882029F3090099C247 /* PlayerView.swift in Sources */,
+				F3E2F613202EFC9600668E15 /* PlayerViewController.swift in Sources */,
 				F3FD1D652029F2670099C247 /* UIImage+faceAwareScaling.swift in Sources */,
 				F3FD1D732029F2CC0099C247 /* FilterTableViewCell.swift in Sources */,
+				F30C5EC8202F475A001DDBEB /* LiveChannelCollectionViewCell.swift in Sources */,
 				F3047DA42029F012000C48F9 /* TVGemist.xcdatamodeld in Sources */,
 				F3FD1D622029F2670099C247 /* UIView+fromNib.swift in Sources */,
 				F3FD1D592029F2450099C247 /* Utilities.swift in Sources */,
 				F3FD1D832029F2E20099C247 /* ProgramCollectionReusableView.swift in Sources */,
+				F32B5F7D202E02C700A6BE99 /* LiveViewController.swift in Sources */,
 				F3047D9F2029F012000C48F9 /* AppDelegate.swift in Sources */,
 				F3FD1D742029F2CC0099C247 /* ProgramsDetailViewController.swift in Sources */,
 				F31108602029F62E006539CA /* ProgramCollectionViewCell.swift in Sources */,
@@ -539,7 +548,6 @@
 				F3FD1D812029F2E20099C247 /* EpisodeCollectionViewCell.swift in Sources */,
 				F3FD1D612029F2670099C247 /* String+i18n.swift in Sources */,
 				F3FD1D632029F2670099C247 /* UIViewController+fromNib.swift in Sources */,
-				F3FD1D8C2029F3110099C247 /* LegacyPlayerViewController.swift in Sources */,
 				F3FD1D662029F2670099C247 /* UIViewController+fromStoryboard.swift in Sources */,
 				F3FD1D762029F2CC0099C247 /* ProgramsMasterViewController.swift in Sources */,
 				F3C8150D202C7FEF000D4A72 /* UIImage+tinted.swift in Sources */,
@@ -714,7 +722,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = USQSAZ85Q4;
 				INFOPLIST_FILE = TVGemist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemist;
@@ -731,7 +739,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = USQSAZ85Q4;
 				INFOPLIST_FILE = TVGemist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemist;

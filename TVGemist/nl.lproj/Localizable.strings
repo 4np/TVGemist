@@ -13,3 +13,11 @@
 "'%@' is not available" = "'%@' is niet beschikbaar";
 "This program is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\"%@\"" = "Dit programma is exclusief beschikbaar voor NPO Start Plus abonnees en kan zodoende helaas niet worden bekeken.\n\n\"%@\"";
 "This episode is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\n\"%@\"" = "Deze aflevering is exclusief beschikbaar voor NPO Start Plus abonnees en kan zodoende helaas niet worden bekeken.\n\n\n\"%@\"";
+
+/* Live */
+"Next: %@ - %@" = "Straks: %@ - %@";
+
+/* GHKit - release alerts */
+"New release available" = "Nieuwe release beschikbaar";
+"You are %i releases behind" = "Je ligt %i releases achter";
+"Version '%@' is available for download at '%@'.\n\n%@" = "Versie '%@' kan gedownload worden op '%@'.\n\n%@";

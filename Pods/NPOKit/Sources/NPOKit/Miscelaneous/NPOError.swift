@@ -12,6 +12,8 @@ public enum NPOError: Error {
     case statusCodeError(Int, URLRequest)
     case missingFairplayStream
     case missingImage
+    case missingIdentifier
+    case imageNotAvailable
 }
 
 extension NPOError: LocalizedError {
@@ -25,6 +27,10 @@ extension NPOError: LocalizedError {
             return "Missing FairPlay stream"
         case .missingImage:
             return "Missing image"
+        case .missingIdentifier:
+            return "Missing identifier"
+        case .imageNotAvailable:
+            return "Image not available"
         }
     }
 }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="13771" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LiveChannelCollectionViewCell" customModule="TVGemist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="548" height="414"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gj2-pf-AC9">
+                    <rect key="frame" x="0.0" y="0.0" width="548" height="308"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Gj2-pf-AC9" secondAttribute="height" multiplier="16:9" id="FQG-nh-QrF"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SbL-Xc-tHN">
+                    <rect key="frame" x="440" y="8" width="100" height="68"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="bp9-Ka-FPz"/>
+                        <constraint firstAttribute="height" constant="68" id="lgz-Sm-Iz1"/>
+                        <constraint firstAttribute="width" secondItem="SbL-Xc-tHN" secondAttribute="height" multiplier="25:17" id="llj-zZ-25Z"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvX-az-eXs">
+                    <rect key="frame" x="0.0" y="316" width="548" height="35"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <color key="textColor" red="1" green="0.66334546380000003" blue="0.13302034669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1g-0o-cNO">
+                    <rect key="frame" x="0.0" y="359" width="548" height="35"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Gj2-pf-AC9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0fy-on-FLh"/>
+                <constraint firstItem="SbL-Xc-tHN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="0x2-NO-mJz"/>
+                <constraint firstAttribute="trailing" secondItem="SbL-Xc-tHN" secondAttribute="trailing" constant="8" id="2hE-Xg-yHF"/>
+                <constraint firstAttribute="trailing" secondItem="M1g-0o-cNO" secondAttribute="trailing" id="9ft-c0-htg"/>
+                <constraint firstAttribute="trailing" secondItem="mvX-az-eXs" secondAttribute="trailing" id="PNU-jy-PGh"/>
+                <constraint firstItem="M1g-0o-cNO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vyd-e2-b1X"/>
+                <constraint firstItem="M1g-0o-cNO" firstAttribute="top" secondItem="mvX-az-eXs" secondAttribute="bottom" constant="8" id="WCl-NX-zOc"/>
+                <constraint firstItem="mvX-az-eXs" firstAttribute="top" secondItem="Gj2-pf-AC9" secondAttribute="bottom" constant="8" id="Yw0-4Y-3cg"/>
+                <constraint firstAttribute="trailing" secondItem="Gj2-pf-AC9" secondAttribute="trailing" id="agb-m3-4H8"/>
+                <constraint firstItem="mvX-az-eXs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hBy-Cm-C0c"/>
+                <constraint firstAttribute="bottom" secondItem="M1g-0o-cNO" secondAttribute="bottom" constant="20" id="hwu-It-GRM"/>
+                <constraint firstItem="Gj2-pf-AC9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nSG-FB-rDf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Pmt-tb-8Ig"/>
+            <connections>
+                <outlet property="imageView" destination="Gj2-pf-AC9" id="Mvx-gr-fkM"/>
+                <outlet property="logoImageView" destination="SbL-Xc-tHN" id="ufS-6J-q34"/>
+                <outlet property="nameLabel" destination="mvX-az-eXs" id="eGr-Vc-WFI"/>
+                <outlet property="nextLabel" destination="M1g-0o-cNO" id="3r3-n3-flQ"/>
+            </connections>
+            <point key="canvasLocation" x="51" y="106"/>
+        </view>
+    </objects>
+</document>
