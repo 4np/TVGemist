@@ -15,7 +15,7 @@ _Note: this project is in active development, consider this alpha..._
 
 # Getting started
 
-Please refer to the [installation guide](https://github.com/4np/INSTALLATION.md) on how to get `TV Gemist` on your tv.
+Please refer to the [installation guide](https://github.com/4np/TVGemist/blob/master/INSTALLATION.md) on how to get `TV Gemist` on your tv.
 
 # Screenshots
 
