@@ -1,4 +1,4 @@
-# tv TV Gemist
+#  TV Gemist
 
 [![Build Status](https://travis-ci.org/4np/TVGemist.svg?branch=master)](https://travis-ci.org/4np/TVGemist)
 [![Release](https://img.shields.io/github/release/4np/TVGemist.svg)](https://github.com/4np/TVGemist/releases/latest)
@@ -9,13 +9,13 @@
 [![Open Issues](https://img.shields.io/github/issues/4np/TVGemist.svg?maxAge=3600)](https://github.com/4np/TVGemist/issues)
 [![Closed Issues](https://img.shields.io/github/issues-closed/4np/TVGemist.svg?maxAge=3600)](https://github.com/4np/TVGemist/issues?q=is%3Aissue+is%3Aclosed)
 
-```TVGemist``` is an unofficial fast native ```Uitzending Gemist``` and ```NPO Live``` application for Apple TV developed in [Swift](https://developer.apple.com/swift/). It will allow you to browse and watch all video streams of the Nederlandse Publieke Omroep's (e.g. NPO, the Dutch public broadcaster) [Uitzending Gemist](http://www.npo.nl/uitzending-gemist) website on your Apple TV.
+```TVGemist``` is an unofficial fast native ```Uitzending Gemist``` and ```NPO Live``` application for Apple TV  developed in [Swift](https://developer.apple.com/swift/). It will allow you to browse and watch all video streams of the Nederlandse Publieke Omroep's (e.g. NPO, the Dutch public broadcaster) [Uitzending Gemist](http://www.npo.nl/uitzending-gemist) website on your Apple TV.
 
 _Note: this project is in active development, consider this alpha..._
 
 # Getting started
 
-Please refer to Uitzending Gemist's [guide](https://github.com/4np/UitzendingGemist#okay-thats-all-great-but-how-do-i-get-this-on-my-) on how to get `TV Gemist` on your tv.
+Please refer to the [installation guide](https://github.com/4np/INSTALLATION.md) on how to get `TV Gemist` on your tv.
 
 # Screenshots
 
