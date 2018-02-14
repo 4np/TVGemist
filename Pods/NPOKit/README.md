@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/4np/NPOKit.svg?branch=master)](https://travis-ci.org/4np/NPOKit)
 [![Release](https://img.shields.io/github/release/4np/NPOKit.svg)](https://github.com/4np/NPOKit/releases/latest)
-[![Commits Since](https://img.shields.io/github/commits-since/4np/NPOKit/0.0.4.svg?maxAge=3600)](https://github.com/4np/NPOKit/commits/master)
+[![Commits Since](https://img.shields.io/github/commits-since/4np/NPOKit/0.0.5.svg?maxAge=3600)](https://github.com/4np/NPOKit/commits/master)
 [![Platform](https://img.shields.io/badge/platform-tvOS%2011-green.svg?maxAge=3600)](https://developer.apple.com/tvos/)
 [![Swift](https://img.shields.io/badge/language-Swift-ed523f.svg?maxAge=3600)](https://swift.org)
 [![codebeat badge](https://codebeat.co/badges/6fb36ab9-1143-4a7d-92e3-59fced359a99)](https://codebeat.co/projects/github-com-4np-npokit-master)
@@ -46,8 +46,8 @@ As `NPOKit` is a true Swift application and supports the `Swift Package Manager`
 Below you'll find some sample code on how to implement some paginated fetching of programs. Unfortunately the API currently does not support sorting in alphabetical order, so the result will be based by the sort order the NPO returns (which is by most used). 
 
 ```swift
-func getProgramPaginator(successHandler: @escaping Paginator<Program>.SuccessHandler,
-                         failureHandler: Paginator<Program>.FailureHandler? = nil) -> Paginator<Program>
+func getProgramPaginator(completionHandler: (Result<(paginator: Paginator, items: [Program])>) -> Void) -> Paginator<Program>
+func getProgramPaginator(using programFilters: [ProgramFilter]?, completionHandler: (Result<(paginator: Paginator, items: [Program])>) -> Void) -> Paginator<Program>
 ```
 
 #### Example:
@@ -110,7 +110,7 @@ extension ProgramsViewController: UIScrollViewDelegate {
 Fetching episodes works very much like fetching programs (see above), it just requires a `program` argument when setting up the paginator:
 
 ```swift
-func getEpisodePaginator(for item: Item, completionHandler: @escaping (Result<(paginator: Paginator, items: [Episode])>) -> Void) -> Paginator<Episode>
+func getEpisodePaginator(for item: Item, completionHandler: (Result<(paginator: Paginator, items: [Episode])>) -> Void) -> Paginator<Episode>
 ```
 
 ### Fetching images
@@ -118,8 +118,35 @@ func getEpisodePaginator(for item: Item, completionHandler: @escaping (Result<(p
 `Item` bases resources (like `Program` and `Episode`) may provide images for different usages. The most common way you would use those images on `tvOS` are for populating collection view cells, or by showing a header:
 
 ```swift
-func fetchHeaderImage(for item: Item, completionHandler: @escaping (Result<(UXImage, URLSessionDataTask)>) -> Void) -> URLSessionDataTask? 
-func fetchCollectionImage(for item: Item, completionHandler: @escaping (Result<(UXImage, URLSessionDataTask)>) -> Void) -> URLSessionDataTask?
+func fetchOriginalImage(for item: ImageFetchable, completionHandler: (Result<(UXImage, URLSessionDataTask)>) -> Void) -> URLSessionDataTask?
+func fetchHeaderImage(for item: Item, completionHandler: (Result<(UXImage, URLSessionDataTask)>) -> Void) -> URLSessionDataTask? 
+func fetchCollectionImage(for item: Item, completionHandler: (Result<(UXImage, URLSessionDataTask)>) -> Void) -> URLSessionDataTask?
+```
+
+### Fetching (srt) subtitles
+
+Fetching the (Dutch) SRT subtitle contents for an episode:
+
+```
+public func fetchSubtitleContents(for episode: Episode, completionHandler: @escaping (Result<String>) -> Void)
+```
+
+Alternatively it is possiblr to fetch parsed subtitles:
+
+```
+public func fetchSubtitle(for item: Item, completionHandler: @escaping (Result<[SubtitleLine]>) -> Void)
+```
+
+Where `SubtitleLine` is a `tuple`:
+
+```
+public typealias SubtitleLine = (number: Int, from: TimeInterval, to: TimeInterval, text: String)
+```
+
+### Fetching live (and themed) broadcasts
+
+```
+public func fetchLiveBroadcasts(completionHandler: @escaping (Result<[LiveBroadcast]>) -> Void)
 ```
 
 ## Logging
@@ -200,24 +227,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ...
 }
 ```
-
-# Working on `NPOKit`
-
-In order to work on `NPOKit` in `Xcode`, you need to generate an Xcode project. Run the following command in the project root:
-
-```bash
-swift package generate-xcodeproj
-```
-
-Before sending a pull request, make sure you used the same coding style and that you lint your code using the most recent [SwiftLint](https://github.com/realm/SwiftLint) release:
-
-```bash
-$ swiftlint
-...
-Done linting! Found 0 violations, 0 serious in 34 files.
-```
-
-_Note: the Xcode project will not be comitted to git._
 
 # License
 

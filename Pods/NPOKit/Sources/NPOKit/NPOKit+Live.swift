@@ -8,13 +8,17 @@
 import Foundation
 
 public extension NPOKit {
-    public func fetchLiveChannels(completionHandler: @escaping (Result<[LiveComponent]>) -> Void) {
+    public func fetchLiveBroadcasts(completionHandler: @escaping (Result<[LiveBroadcast]>) -> Void) {
         fetchModel(ofType: LiveContainer.self, forEndpoint: "page/live", postData: nil) { (result) in
             switch result {
             case .success(let container):
                 // we're really only interested in the now playing components
                 let nowPlayingComponents = container.components.filter({ $0.type == .nowPlaying })
-                completionHandler(.success(nowPlayingComponents))
+                
+                // additionally, we're only interested in the live broadcasts
+                let broadcasts = nowPlayingComponents.flatMap({ $0.broadcasts }).flatMap({ $0 })
+
+                completionHandler(.success(broadcasts))
             case .failure(let error):
                 completionHandler(.failure(error))
             }

@@ -30,7 +30,13 @@ public extension NPOKit {
         getToken { [weak self] (result) in
             switch result {
             case .success(let token):
-                self?.fetchModel(ofType: LegacyStream.self, forLegacyEndpoint: "/app.php/\(item.id!)?adaptive=yes&token=\(token.value)", postData: nil, completionHandler: completionHandler)
+                guard let id = item.id else {
+                    let error = NPOError.missingIdentifier
+                    completionHandler(.failure(error))
+                    return
+                }
+                
+                self?.fetchModel(ofType: LegacyStream.self, forLegacyEndpoint: "/app.php/\(id)?adaptive=yes&token=\(token.value)", postData: nil, completionHandler: completionHandler)
             case .failure(let error):
                 completionHandler(.failure(error))
             }

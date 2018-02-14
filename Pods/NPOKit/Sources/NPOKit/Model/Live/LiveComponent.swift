@@ -20,10 +20,10 @@ public struct LiveComponent: Codable {
     var subType: String
     var isPlaceholder: Bool
     
-    var epgSingular: LiveEPG?
-    var epgPlural: [LiveEPG]?
+    var epgSingular: LiveBroadcast?
+    var epgPlural: [LiveBroadcast]?
 
-    public var epg: [LiveEPG]? {
+    public var broadcasts: [LiveBroadcast]? {
         if let epg = epgSingular {
             return [epg]
         } else if let epg = epgPlural {

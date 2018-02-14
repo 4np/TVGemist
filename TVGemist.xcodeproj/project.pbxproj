@@ -13,8 +13,8 @@
 		F3047DB42029F012000C48F9 /* TVGemistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3047DB32029F012000C48F9 /* TVGemistTests.swift */; };
 		F3047DBF2029F012000C48F9 /* TVGemistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3047DBE2029F012000C48F9 /* TVGemistUITests.swift */; };
 		F3069D71202F3FD2001D8970 /* PlayerViewController+FairPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3069D70202F3FD2001D8970 /* PlayerViewController+FairPlay.swift */; };
-		F30C5EC8202F475A001DDBEB /* LiveChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C5EC7202F475A001DDBEB /* LiveChannelCollectionViewCell.swift */; };
-		F30C5ECA202F4769001DDBEB /* LiveChannelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30C5EC9202F4769001DDBEB /* LiveChannelCollectionViewCell.xib */; };
+		F30C5EC8202F475A001DDBEB /* LiveBroadcastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C5EC7202F475A001DDBEB /* LiveBroadcastCollectionViewCell.swift */; };
+		F30C5ECA202F4769001DDBEB /* LiveBroadcastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30C5EC9202F4769001DDBEB /* LiveBroadcastCollectionViewCell.xib */; };
 		F311085F2029F62E006539CA /* ProgramCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F311085D2029F62D006539CA /* ProgramCollectionViewCell.xib */; };
 		F31108602029F62E006539CA /* ProgramCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F311085E2029F62E006539CA /* ProgramCollectionViewCell.swift */; };
 		F32B5F7D202E02C700A6BE99 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B5F7C202E02C700A6BE99 /* LiveViewController.swift */; };
@@ -75,8 +75,8 @@
 		F3047DBE2029F012000C48F9 /* TVGemistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGemistUITests.swift; sourceTree = "<group>"; };
 		F3047DC02029F012000C48F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3069D70202F3FD2001D8970 /* PlayerViewController+FairPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerViewController+FairPlay.swift"; sourceTree = "<group>"; };
-		F30C5EC7202F475A001DDBEB /* LiveChannelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChannelCollectionViewCell.swift; sourceTree = "<group>"; };
-		F30C5EC9202F4769001DDBEB /* LiveChannelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveChannelCollectionViewCell.xib; sourceTree = "<group>"; };
+		F30C5EC7202F475A001DDBEB /* LiveBroadcastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBroadcastCollectionViewCell.swift; sourceTree = "<group>"; };
+		F30C5EC9202F4769001DDBEB /* LiveBroadcastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveBroadcastCollectionViewCell.xib; sourceTree = "<group>"; };
 		F311085D2029F62D006539CA /* ProgramCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramCollectionViewCell.xib; sourceTree = "<group>"; };
 		F311085E2029F62E006539CA /* ProgramCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramCollectionViewCell.swift; sourceTree = "<group>"; };
 		F32B5F7C202E02C700A6BE99 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
@@ -223,8 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				F32B5F7C202E02C700A6BE99 /* LiveViewController.swift */,
-				F30C5EC9202F4769001DDBEB /* LiveChannelCollectionViewCell.xib */,
-				F30C5EC7202F475A001DDBEB /* LiveChannelCollectionViewCell.swift */,
+				F30C5EC9202F4769001DDBEB /* LiveBroadcastCollectionViewCell.xib */,
+				F30C5EC7202F475A001DDBEB /* LiveBroadcastCollectionViewCell.swift */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -428,7 +428,7 @@
 				F3FD1D802029F2E20099C247 /* ProgramCollectionReusableView.xib in Resources */,
 				F3AB6CDE202CB862008A4F73 /* Localizable.strings in Resources */,
 				F3FD1D902029F3260099C247 /* Assets.xcassets in Resources */,
-				F30C5ECA202F4769001DDBEB /* LiveChannelCollectionViewCell.xib in Resources */,
+				F30C5ECA202F4769001DDBEB /* LiveBroadcastCollectionViewCell.xib in Resources */,
 				F311085F2029F62E006539CA /* ProgramCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,7 +535,7 @@
 				F3E2F613202EFC9600668E15 /* PlayerViewController.swift in Sources */,
 				F3FD1D652029F2670099C247 /* UIImage+faceAwareScaling.swift in Sources */,
 				F3FD1D732029F2CC0099C247 /* FilterTableViewCell.swift in Sources */,
-				F30C5EC8202F475A001DDBEB /* LiveChannelCollectionViewCell.swift in Sources */,
+				F30C5EC8202F475A001DDBEB /* LiveBroadcastCollectionViewCell.swift in Sources */,
 				F3047DA42029F012000C48F9 /* TVGemist.xcdatamodeld in Sources */,
 				F3FD1D622029F2670099C247 /* UIView+fromNib.swift in Sources */,
 				F3FD1D592029F2450099C247 /* Utilities.swift in Sources */,
@@ -719,7 +719,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 87543883403910034B7C1B7D /* Pods-TVGemistAbstract-TVGemist.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
@@ -736,7 +736,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 240FC968577850A907B1D347 /* Pods-TVGemistAbstract-TVGemist.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";

@@ -9,7 +9,7 @@ import Foundation
 
 public struct LiveStream: Codable, ImageFetchable {
     var id: String
-    var title: String
+    public private(set) var title: String
     public private(set) var images: ImageContainer
     var quality: [QualityOption]?
     

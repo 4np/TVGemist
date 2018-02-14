@@ -12,6 +12,7 @@ class Utilities {
     static let shared = Utilities()
     static let isDebug = _isDebugAssertConfiguration()
     static let isFairPlayEnabled = false
+    static let areSubtitlesEnabled = false
     
     private init() {
     }

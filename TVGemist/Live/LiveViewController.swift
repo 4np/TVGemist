@@ -30,13 +30,13 @@ class LiveViewController: UIViewController {
         
         return imageView
     }()
-    private var epgs = [LiveEPG]()
+    private var broadcasts = [LiveBroadcast]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // register cells
-        collectionView.register(UINib(nibName: LiveChannelCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: LiveChannelCollectionViewCell.reuseIdentifier)
+        collectionView.register(UINib(nibName: LiveBroadcastCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: LiveBroadcastCollectionViewCell.reuseIdentifier)
         
         // set initial background image
         backgroundImageView.image = UIImage(named: "PlaceholderImage")
@@ -50,16 +50,14 @@ class LiveViewController: UIViewController {
     // MARK: Networking
     
     private func fetchLiveChannels() {
-        NPOKit.shared.fetchLiveChannels { [weak self] (result) in
+        NPOKit.shared.fetchLiveBroadcasts { [weak self] (result) in
             switch result {
-            case .success(let components):
-                let epgs = components.flatMap({ $0.epg }).flatMap({ $0 })
-                
-                if self?.epgs.count != epgs.count {
-                    self?.epgs = epgs
+            case .success(let broadcasts):
+                if self?.broadcasts.count != broadcasts.count {
+                    self?.broadcasts = broadcasts
                     self?.collectionView.reloadData()
                 } else {
-                    self?.updateLiveChannels(with: epgs)
+                    self?.updateBroadcasts(with: broadcasts)
                 }
             case .failure(let error as NPOError):
                 log.error("Could not fetch live channels (\(error.localizedDescription))")
@@ -69,15 +67,15 @@ class LiveViewController: UIViewController {
         }
     }
     
-    private func updateLiveChannels(with epgs: [LiveEPG]) {
-        for epg in epgs {
-            guard let index = self.epgs.index(where: { $0 == epg }) else { continue }
+    private func updateBroadcasts(with broadcasts: [LiveBroadcast]) {
+        for broadcast in broadcasts {
+            guard let index = self.broadcasts.index(where: { $0 == broadcast }) else { continue }
             
-            self.epgs[index] = epg
+            self.broadcasts[index] = broadcast
 
             let indexPath = IndexPath(row: index, section: 0)
-            if let cell = collectionView.cellForItem(at: indexPath) as? LiveChannelCollectionViewCell {
-                cell.configure(withEPG: epg)
+            if let cell = collectionView.cellForItem(at: indexPath) as? LiveBroadcastCollectionViewCell {
+                cell.configure(with: broadcast)
             }
         }
     }
@@ -90,13 +88,13 @@ extension LiveViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return epgs.count
+        return broadcasts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //swiftlint:disable:next force_cast
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LiveChannelCollectionViewCell.reuseIdentifier, for: indexPath) as! LiveChannelCollectionViewCell
-        cell.configure(withEPG: epgs[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LiveBroadcastCollectionViewCell.reuseIdentifier, for: indexPath) as! LiveBroadcastCollectionViewCell
+        cell.configure(with: broadcasts[indexPath.row])
         return cell
     }
 }
@@ -104,15 +102,14 @@ extension LiveViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 extension LiveViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let liveStream = epgs[indexPath.row].channel.liveStream
         let playerViewController = PlayerViewController()
         present(playerViewController, animated: true) {
-            playerViewController.play(liveStream: liveStream)
+            playerViewController.play(broadcast: self.broadcasts[indexPath.row])
         }
     }
     
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        guard let cell = collectionView.visibleCells.first(where: { $0.isFocused }) as? LiveChannelCollectionViewCell, let image = cell.liveChannelImage else { return }
+        guard let cell = collectionView.visibleCells.first(where: { $0.isFocused }) as? LiveBroadcastCollectionViewCell, let image = cell.liveChannelImage else { return }
         self.backgroundImageView.image = image
     }
 }

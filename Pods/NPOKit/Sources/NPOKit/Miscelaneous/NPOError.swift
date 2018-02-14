@@ -14,6 +14,7 @@ public enum NPOError: Error {
     case missingImage
     case missingIdentifier
     case imageNotAvailable
+    case subtitleNotAvailable
 }
 
 extension NPOError: LocalizedError {
@@ -31,6 +32,8 @@ extension NPOError: LocalizedError {
             return "Missing identifier"
         case .imageNotAvailable:
             return "Image not available"
+        case .subtitleNotAvailable:
+            return "Subtitle not available"
         }
     }
 }
