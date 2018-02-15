@@ -90,7 +90,6 @@ Finally you are able to compile the program and deploy it onto your Apple TV! Cl
 
 _Note: if you encounter issues or you are unable to play, this is where you should debug what it going on. Observe the Xcode console output while leaving your Apple TV connected. Alternatively you can also run in the simulator (see **5** in the screenshot above) and observe the Xcode console output to debug the issues you are experiencing._
 
-## 9. Sit back and enjoy :)
+## 9. Finished 🏁
 
-You're done! You can disconnect your Apple TV and start watching! :)
-
+You're good to go, enjoy watching!
