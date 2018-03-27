@@ -66,9 +66,18 @@ class PlayerViewController: AVPlayerViewController {
 
 // MARK: Playback
 extension PlayerViewController {
-    public func play(broadcast: LiveBroadcast) {
-        self.playbackItem = broadcast
-        legacyPlay(liveStream: broadcast.channel.liveStream)
+    public func play(liveBroadcast: LiveBroadcast) {
+        self.playbackItem = liveBroadcast
+        legacyPlay(liveStream: liveBroadcast.channel.liveStream)
+    }
+    
+    public func play(localBroadcast: LocalBroadcast) {
+        self.playbackItem = localBroadcast
+        if let url = localBroadcast.url {
+            play(url: url)
+        } else {
+            legacyPlay(liveStream: localBroadcast.liveStream)
+        }
     }
     
     private func legacyPlay(liveStream: LiveStream) {
@@ -79,6 +88,7 @@ extension PlayerViewController {
                     log.error("Could not fetch legacy stream")
                     return
                 }
+                
                 self?.play(url: url)
             case .failure(let error as NPOError):
                 log.error("Could not fetch legacy stream (\(error.localizedDescription))")

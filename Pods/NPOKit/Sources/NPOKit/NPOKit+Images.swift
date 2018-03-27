@@ -67,4 +67,13 @@ public extension NPOKit {
         }
         return fetchImage(url: url, completionHandler: completionHandler)
     }
+    
+    func fetchImage(for broadcast: LocalBroadcast, completionHandler: @escaping (Result<(UXImage, URLSessionDataTask)>) -> Void) -> URLSessionDataTask? {
+        guard let url = broadcast.imageURL else {
+            let error = NPOError.imageNotAvailable
+            completionHandler(.failure(error))
+            return nil
+        }
+        return fetchImage(url: url, completionHandler: completionHandler)
+    }
 }

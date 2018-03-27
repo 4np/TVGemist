@@ -14,7 +14,8 @@ import Foundation
     
     extension UIImage {
         convenience init?(withName name: String) {
-            self.init(named: name)
+            let bundle = Bundle(for: UXImage.self)
+            self.init(named: name, in: bundle, compatibleWith: nil)
         }
     }
 #endif

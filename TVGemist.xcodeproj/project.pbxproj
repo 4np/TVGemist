@@ -18,6 +18,8 @@
 		F311085F2029F62E006539CA /* ProgramCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F311085D2029F62D006539CA /* ProgramCollectionViewCell.xib */; };
 		F31108602029F62E006539CA /* ProgramCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F311085E2029F62E006539CA /* ProgramCollectionViewCell.swift */; };
 		F32B5F7D202E02C700A6BE99 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B5F7C202E02C700A6BE99 /* LiveViewController.swift */; };
+		F36E6D2A206A81EF0035192B /* LocalBroadcastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36E6D29206A81EF0035192B /* LocalBroadcastCollectionViewCell.swift */; };
+		F36E6D2C206A827A0035192B /* LocalBroadcastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F36E6D2B206A827A0035192B /* LocalBroadcastCollectionViewCell.xib */; };
 		F3AB6CDE202CB862008A4F73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F3AB6CDC202CB862008A4F73 /* Localizable.strings */; };
 		F3B1FDB3202CADAD00AB90CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1FDB5202CADAD00AB90CE /* Main.storyboard */; };
 		F3C8150D202C7FEF000D4A72 /* UIImage+tinted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8150C202C7FEF000D4A72 /* UIImage+tinted.swift */; };
@@ -80,6 +82,8 @@
 		F311085D2029F62D006539CA /* ProgramCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramCollectionViewCell.xib; sourceTree = "<group>"; };
 		F311085E2029F62E006539CA /* ProgramCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramCollectionViewCell.swift; sourceTree = "<group>"; };
 		F32B5F7C202E02C700A6BE99 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		F36E6D29206A81EF0035192B /* LocalBroadcastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBroadcastCollectionViewCell.swift; sourceTree = "<group>"; };
+		F36E6D2B206A827A0035192B /* LocalBroadcastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocalBroadcastCollectionViewCell.xib; sourceTree = "<group>"; };
 		F3AB6CD7202CB7A6008A4F73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		F3AB6CD8202CB7AD008A4F73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
 		F3AB6CDD202CB862008A4F73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = TVGemist/en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 				F32B5F7C202E02C700A6BE99 /* LiveViewController.swift */,
 				F30C5EC9202F4769001DDBEB /* LiveBroadcastCollectionViewCell.xib */,
 				F30C5EC7202F475A001DDBEB /* LiveBroadcastCollectionViewCell.swift */,
+				F36E6D2B206A827A0035192B /* LocalBroadcastCollectionViewCell.xib */,
+				F36E6D29206A81EF0035192B /* LocalBroadcastCollectionViewCell.swift */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 				F3FD1D802029F2E20099C247 /* ProgramCollectionReusableView.xib in Resources */,
 				F3AB6CDE202CB862008A4F73 /* Localizable.strings in Resources */,
 				F3FD1D902029F3260099C247 /* Assets.xcassets in Resources */,
+				F36E6D2C206A827A0035192B /* LocalBroadcastCollectionViewCell.xib in Resources */,
 				F30C5ECA202F4769001DDBEB /* LiveBroadcastCollectionViewCell.xib in Resources */,
 				F311085F2029F62E006539CA /* ProgramCollectionViewCell.xib in Resources */,
 			);
@@ -518,6 +525,7 @@
 				F3FD1D752029F2CC0099C247 /* ProgramsSplitViewController.swift in Sources */,
 				F3E2F613202EFC9600668E15 /* PlayerViewController.swift in Sources */,
 				F3FD1D652029F2670099C247 /* UIImage+faceAwareScaling.swift in Sources */,
+				F36E6D2A206A81EF0035192B /* LocalBroadcastCollectionViewCell.swift in Sources */,
 				F3FD1D732029F2CC0099C247 /* FilterTableViewCell.swift in Sources */,
 				F30C5EC8202F475A001DDBEB /* LiveBroadcastCollectionViewCell.swift in Sources */,
 				F3047DA42029F012000C48F9 /* TVGemist.xcdatamodeld in Sources */,

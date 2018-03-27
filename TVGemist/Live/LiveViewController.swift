@@ -30,51 +30,87 @@ class LiveViewController: UIViewController {
         
         return imageView
     }()
-    private var broadcasts = [LiveBroadcast]()
-    
+    private var liveBroadcasts = [LiveBroadcast]()
+    private var regionalBroadcasts = [LocalBroadcast]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // register cells
         collectionView.register(UINib(nibName: LiveBroadcastCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: LiveBroadcastCollectionViewCell.reuseIdentifier)
-        
+        collectionView.register(UINib(nibName: LocalBroadcastCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: LocalBroadcastCollectionViewCell.reuseIdentifier)
+
         // set initial background image
         backgroundImageView.image = UIImage(named: "PlaceholderImage")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchLiveChannels()
+        fetchLiveBroadcasts()
+        fetchRegionalBroadcasts()
     }
     
     // MARK: Networking
     
-    private func fetchLiveChannels() {
+    private func fetchLiveBroadcasts() {
+        // fetch live broadcasts
         NPOKit.shared.fetchLiveBroadcasts { [weak self] (result) in
             switch result {
             case .success(let broadcasts):
-                if self?.broadcasts.count != broadcasts.count {
-                    self?.broadcasts = broadcasts
+                if self?.liveBroadcasts.count != broadcasts.count {
+                    self?.liveBroadcasts = broadcasts
                     self?.collectionView.reloadData()
                 } else {
-                    self?.updateBroadcasts(with: broadcasts)
+                    self?.updateLiveBroadcasts(with: broadcasts)
                 }
             case .failure(let error as NPOError):
                 log.error("Could not fetch live channels (\(error.localizedDescription))")
-            case.failure(let error):
+            case .failure(let error):
                 log.error("Could not fetch live channels (\(error.localizedDescription))")
             }
         }
     }
     
-    private func updateBroadcasts(with broadcasts: [LiveBroadcast]) {
+    private func fetchRegionalBroadcasts() {
+        // fetch regional broadcasts
+        NPOKit.shared.fetchRegionalBroadcasts { [weak self] (result) in
+            switch result {
+            case .success(let broadcasts):
+                if self?.regionalBroadcasts.count != broadcasts.count {
+                    self?.regionalBroadcasts = broadcasts
+                    self?.collectionView.reloadData()
+                } else {
+                    self?.updateRegionalBroadcasts(with: broadcasts)
+                }
+            case .failure(let error as NPOError):
+                log.error("Could not fetch local channels (\(error.localizedDescription))")
+            case .failure(let error):
+                log.error("Could not fetch local channels (\(error.localizedDescription))")
+            }
+        }
+    }
+    
+    private func updateLiveBroadcasts(with broadcasts: [LiveBroadcast]) {
         for broadcast in broadcasts {
-            guard let index = self.broadcasts.index(where: { $0 == broadcast }) else { continue }
+            guard let index = self.liveBroadcasts.index(where: { $0 == broadcast }) else { continue }
             
-            self.broadcasts[index] = broadcast
+            self.liveBroadcasts[index] = broadcast
 
             let indexPath = IndexPath(row: index, section: 0)
             if let cell = collectionView.cellForItem(at: indexPath) as? LiveBroadcastCollectionViewCell {
+                cell.configure(with: broadcast)
+            }
+        }
+    }
+    
+    private func updateRegionalBroadcasts(with broadcasts: [LocalBroadcast]) {
+        for broadcast in broadcasts {
+            guard let index = self.regionalBroadcasts.index(where: { $0 == broadcast }) else { continue }
+            
+            self.regionalBroadcasts[index] = broadcast
+            
+            let indexPath = IndexPath(row: index, section: 1)
+            if let cell = collectionView.cellForItem(at: indexPath) as? LocalBroadcastCollectionViewCell {
                 cell.configure(with: broadcast)
             }
         }
@@ -84,17 +120,42 @@ class LiveViewController: UIViewController {
 // MARK: UICollectionViewDataSource
 extension LiveViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return broadcasts.count
+        switch section {
+        case 0:
+            return liveBroadcasts.count
+        case 1:
+            return regionalBroadcasts.count
+        default:
+            fatalError("Unexpected section \(section)")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch indexPath.section {
+        case 0:
+            return self.collectionView(collectionView, liveBroadcastCellForItemAt: indexPath)
+        case 1:
+            return self.collectionView(collectionView, regionalBroadcastCellForItemAt: indexPath)
+        default:
+            fatalError("Unexpected section \(indexPath.section)")
+        }
+    }
+    
+    private func collectionView(_ collectionView: UICollectionView, liveBroadcastCellForItemAt indexPath: IndexPath) -> LiveBroadcastCollectionViewCell {
         //swiftlint:disable:next force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LiveBroadcastCollectionViewCell.reuseIdentifier, for: indexPath) as! LiveBroadcastCollectionViewCell
-        cell.configure(with: broadcasts[indexPath.row])
+        cell.configure(with: liveBroadcasts[indexPath.row])
+        return cell
+    }
+    
+    private func collectionView(_ collectionView: UICollectionView, regionalBroadcastCellForItemAt indexPath: IndexPath) -> LocalBroadcastCollectionViewCell {
+        //swiftlint:disable:next force_cast
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LocalBroadcastCollectionViewCell.reuseIdentifier, for: indexPath) as! LocalBroadcastCollectionViewCell
+        cell.configure(with: regionalBroadcasts[indexPath.row])
         return cell
     }
 }
@@ -104,12 +165,20 @@ extension LiveViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let playerViewController = PlayerViewController()
         present(playerViewController, animated: true) {
-            playerViewController.play(broadcast: self.broadcasts[indexPath.row])
+            switch indexPath.section {
+            case 0:
+                playerViewController.play(liveBroadcast: self.liveBroadcasts[indexPath.row])
+            case 1:
+                playerViewController.play(localBroadcast: self.regionalBroadcasts[indexPath.row])
+            default:
+                fatalError("Unexpected section \(indexPath.section)")
+            }
         }
     }
     
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        guard let cell = collectionView.visibleCells.first(where: { $0.isFocused }) as? LiveBroadcastCollectionViewCell, let image = cell.liveChannelImage else { return }
-        self.backgroundImageView.image = image
+        if let cell = collectionView.visibleCells.first(where: { $0.isFocused }) as? LiveBroadcastCollectionViewCell, let image = cell.liveChannelImage {
+            self.backgroundImageView.image = image
+        }
     }
 }
