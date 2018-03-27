@@ -36,8 +36,7 @@ public extension NPOKit {
         // define how to fetch paginated data
         let fetchHandler: Paginator<Item>.FetchHandler = { [weak self] (paginator, page, pageSize) in
             let endpoint = self?.getEndpoint(for: "page/catalogue", page: page, using: programFilters) ?? "page/catalogue?page=\(page)"
-            self?.fetchModel(ofType: PagedItems.self, forEndpoint: endpoint, postData: nil, completionHandler: { (result) in
-                
+            self?.fetchModel(ofType: PagedItems.self, forEndpoint: endpoint, postData: nil) { (result) in
                 switch result {
                 case .success(let pagedItems):
                     guard let itemData = pagedItems.components?.filter({ $0.type == .grid }).first?.data else {
@@ -50,12 +49,16 @@ public extension NPOKit {
                     
                     // get the filters
                     let filters = pagedItems.components?.filter({ $0.type == .filter }).first?.filters
+                    
+                    // filter out unwanted items
+                    let unwantedItems: [ItemType] = [.unknown, .playlist, .fragment]
+                    let items = itemData.items.filter({ !unwantedItems.contains($0.type) })
 
-                    paginator.completion(result: .success((itemData.items, numberOfPages, filters)))
+                    paginator.completion(result: .success((items, numberOfPages, filters)))
                 case .failure(let error):
                     paginator.completion(result: .failure(error))
                 }
-            })
+            }
         }
         
         // initialize the paginator
@@ -79,7 +82,8 @@ public extension NPOKit {
             guard programFilter.filter.argumentName == "dateFrom" else { continue }
             
             // if so, we need to set an end date
-            let dateToValue = (programFilter.option.title.contains("Afgelopen")) ? today : value
+            let title = programFilter.option.title
+            let dateToValue = (title.contains("Afgelopen") || title.contains("Alle")) ? today : value
             endpoint += "&dateTo=\(dateToValue)"
         }
 

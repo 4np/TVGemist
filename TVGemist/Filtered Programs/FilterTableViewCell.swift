@@ -19,6 +19,7 @@ class FilterTableViewCell: UITableViewCell {
     }
     
     func configure(with filterOption: FilterOption) {
+        textLabel?.font = UIFont.systemFont(ofSize: 32)
         textLabel?.text = filterOption.title
         textLabel?.textColor = UIColor.white
     }

@@ -25,7 +25,7 @@ public extension NPOKit {
     internal func fetchModel<T: Codable>(ofType type: T.Type, forURL url: URL, postData: Data?, completionHandler: @escaping (Result<T>) -> Void) {
         let task = dataTask(forUrl: url, postData: postData, cachePolicy: .reloadIgnoringLocalCacheData) { (result) in
             var jsonData: Data
-
+            
             // check the request was successful
             switch result {
             case .success(let data, _):

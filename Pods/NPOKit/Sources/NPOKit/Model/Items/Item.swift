@@ -16,6 +16,8 @@ public enum ItemType: String, Codable {
     case series
     case broadcast
     case fragment
+    case playlist
+    case unknown
 }
 
 public struct Item: Pageable, ImageFetchable {
@@ -37,7 +39,12 @@ public struct Item: Pageable, ImageFetchable {
     public private(set) var genres: [GenreItem]
     public private(set) var broadcasters: [String]
     public private(set) var images: ImageContainer
-    public private(set) var isOnlyOnNPOPlus: Bool
+    
+    // type playlist does not return 'isOnlyOnNPOPlus' so we need to wrap it
+    private var rawIsOnlyOnNPOPlus: Bool?
+    public var isOnlyOnNPOPlus: Bool {
+        return rawIsOnlyOnNPOPlus ?? false
+    }
     
     // franchise
     var franchiseTitle: String?
@@ -69,7 +76,7 @@ public struct Item: Pageable, ImageFetchable {
         case genres
         case broadcasters
         case images
-        case isOnlyOnNPOPlus = "isOnlyOnNpoPlus"
+        case rawIsOnlyOnNPOPlus = "isOnlyOnNpoPlus"
         
         // franchise
         case franchiseTitle
@@ -98,8 +105,8 @@ extension Item {
     
     // MARK: Enums
     
-    var type: ItemType? {
-        return ItemType(rawValue: typeName)
+    var type: ItemType {
+        return ItemType(rawValue: typeName) ?? .unknown
     }
     
     public var channel: Channel? {

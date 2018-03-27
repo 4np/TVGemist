@@ -16,7 +16,7 @@ public extension NPOKit {
                 let nowPlayingComponents = container.components.filter({ $0.type == .nowPlaying })
                 
                 // additionally, we're only interested in the live broadcasts
-                let broadcasts = nowPlayingComponents.flatMap({ $0.broadcasts }).flatMap({ $0 })
+                let broadcasts = nowPlayingComponents.compactMap({ $0.broadcasts }).flatMap({ $0 })
 
                 completionHandler(.success(broadcasts))
             case .failure(let error):

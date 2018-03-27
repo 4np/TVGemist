@@ -23,9 +23,9 @@ extension UIImage {
 
         // crop the image to prioritize the faces and make them float to the top
         let padding = (size.height - facesRect.height) / 5
-        var y = facesRect.origin.y - padding
-        y = (y < 0) ? 0 : y
-        let cropRect = CGRect(x: 0, y: y, width: size.width, height: size.height)
+        var faceY = facesRect.origin.y - padding
+        faceY = (faceY < 0) ? 0 : faceY
+        let cropRect = CGRect(x: 0, y: faceY, width: size.width, height: size.height)
         
         guard let croppedImage = scaledImage.cgImage?.cropping(to: cropRect) else {
             return scaledImage.aspectScaled(toFill: size)

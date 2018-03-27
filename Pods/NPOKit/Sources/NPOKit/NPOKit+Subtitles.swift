@@ -78,7 +78,7 @@ public extension NPOKit {
             }
             
             // remove optionals
-            let nonOptionalLines = lines.flatMap({ $0 })
+            let nonOptionalLines = lines.compactMap({ $0 })
             
             completionHandler(.success(nonOptionalLines))
         }

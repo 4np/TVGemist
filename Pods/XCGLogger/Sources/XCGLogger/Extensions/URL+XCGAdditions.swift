@@ -23,7 +23,8 @@ extension URL {
             var data = Data(count: length)
 
             // Retrieve attribute
-            let result = data.withUnsafeMutableBytes {
+            var myData = data
+            let result = myData.withUnsafeMutableBytes {
                 getxattr(fileSystemPath, name, $0, data.count, 0, 0)
             }
             guard result >= 0 else { throw URL.posixError(errno) }
@@ -61,13 +62,14 @@ extension URL {
             var data = Data(count: length)
 
             // Retrieve attribute list
-            let result = data.withUnsafeMutableBytes {
+            var myData = data
+            let result = myData.withUnsafeMutableBytes {
                 listxattr(fileSystemPath, $0, data.count, 0)
             }
             guard result >= 0 else { throw URL.posixError(errno) }
 
             // Extract attribute names
-            let list = data.split(separator: 0).flatMap {
+            let list = data.split(separator: 0).compactMap {
                 String(data: Data($0), encoding: .utf8)
             }
             return list

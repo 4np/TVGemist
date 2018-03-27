@@ -13,7 +13,7 @@ _Note: as of summer 2016 Apple has reduced the free Developer account provisioni
 
 ## 1. Xcode
 
-Make sure you have [Xcode 9.2](https://itunes.apple.com/nl/app/xcode/id497799835) ([alternative link](https://developer.apple.com/download/more/)) installed. Continue with the following steps when you have finished installing ```Xcode``` as the next steps require a finished installation.
+Make sure you have [Xcode 9.3](https://itunes.apple.com/nl/app/xcode/id497799835) ([alternative link](https://developer.apple.com/download/more/)) installed. Continue with the following steps when you have finished installing ```Xcode``` as the next steps require a finished installation.
 
 ## 2. Download the project
 

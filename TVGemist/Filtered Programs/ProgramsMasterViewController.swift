@@ -65,7 +65,12 @@ class ProgramsMasterViewController: UITableViewController {
             switch result {
             case .success(let paginator, _):
                 guard let filters = paginator.filters else { return }
-                self?.filters = filters
+                
+                // The NPO started returning the filters in a different order which
+                // probably makes sense for the web, but doesn't for the tvOS app.
+                self?.filters = filters.sorted(by: { (lhs, rhs) -> Bool in
+                    return lhs < rhs
+                })
                 self?.tableView.reloadData()
                 self?.applyDefaultFilters()
             case .failure(let error as NPOError):

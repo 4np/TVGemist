@@ -2,9 +2,9 @@ PODS:
   - GHKit (0.0.3):
     - GHKit/Core (= 0.0.3)
   - GHKit/Core (0.0.3)
-  - NPOKit (0.0.5):
-    - NPOKit/Core (= 0.0.5)
-  - NPOKit/Core (0.0.5)
+  - NPOKit (0.0.6):
+    - NPOKit/Core (= 0.0.6)
+  - NPOKit/Core (0.0.6)
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
@@ -16,9 +16,15 @@ PODS:
 
 DEPENDENCIES:
   - GHKit (from `https://github.com/4np/GHKit.git`, tag `0.0.3`)
-  - NPOKit (from `https://github.com/4np/NPOKit.git`, tag `0.0.5`)
+  - NPOKit (from `https://github.com/4np/NPOKit.git`, tag `0.0.6`)
   - SwiftLint
   - XCGLogger
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - ObjcExceptionBridging
+    - SwiftLint
+    - XCGLogger
 
 EXTERNAL SOURCES:
   GHKit:
@@ -26,7 +32,7 @@ EXTERNAL SOURCES:
     :tag: 0.0.3
   NPOKit:
     :git: https://github.com/4np/NPOKit.git
-    :tag: 0.0.5
+    :tag: 0.0.6
 
 CHECKOUT OPTIONS:
   GHKit:
@@ -34,15 +40,15 @@ CHECKOUT OPTIONS:
     :tag: 0.0.3
   NPOKit:
     :git: https://github.com/4np/NPOKit.git
-    :tag: 0.0.5
+    :tag: 0.0.6
 
 SPEC CHECKSUMS:
   GHKit: 581d518e05fdae0a10ea296cb5ff2dd90649da17
-  NPOKit: 5fcd87bbc346744dab1f983dbb29d8e864bd6ab3
+  NPOKit: 0c32cc9ae19a9aa4bf77d30cf053ac85882d90ef
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
   XCGLogger: c9601cae9a8912de34a58666ba931ed3d624dd31
 
-PODFILE CHECKSUM: 1c79bab751b67c05e3337132eb9e277be5f190a1
+PODFILE CHECKSUM: 7422f60f8d2d024c229d4dec085006c282c50eb7
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0.beta.1
