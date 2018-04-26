@@ -71,12 +71,14 @@ class LiveBroadcastCollectionViewCell: UICollectionViewCell {
     
     func configure(with broadcast: LiveBroadcast) {
         // program title
-        nameLabel.text = broadcast.currentSchedule?.program.title.localizedCapitalized
+        nameLabel.text = broadcast.currentSchedule?.program?.title.localizedCapitalized ?? ""
         
         // next program
-        if let nextSchedule = broadcast.nextSchedule {
+        if let nextSchedule = broadcast.nextSchedule, let nextProgram = nextSchedule.program {
             let nextFormat = "Next: %@ - %@".localized(withComment: "Next: [time] - [program title]")
-            nextLabel.text = String.localizedStringWithFormat(nextFormat, nextSchedule.startTime, nextSchedule.program.title)
+            nextLabel.text = String.localizedStringWithFormat(nextFormat, nextSchedule.startTime, nextProgram.title)
+        } else {
+            nextLabel.text = ""
         }
         
         // get the image for the current program

@@ -205,7 +205,7 @@ extension PlayerViewController {
         shouldUpdateMetadata = false
         schedule = currentSchedule
         
-        let program = currentSchedule.program
+        guard let program = currentSchedule.program else { return }
         
         // construct metadata
         var metadata: [AVMetadataKey: Any?] = [

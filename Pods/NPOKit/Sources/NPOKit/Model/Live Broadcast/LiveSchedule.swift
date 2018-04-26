@@ -11,7 +11,7 @@ public struct LiveSchedule: Codable {
     public private(set) var starts: Date
     public private(set) var ends: Date
     public private(set) var isHighlighted = false
-    public private(set) var program: Item
+    public private(set) var program: Item?
     
     public var startTime: String {
         let dateFormatter = DateFormatter()
