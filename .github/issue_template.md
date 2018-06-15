@@ -1,3 +1,8 @@
+<!--- Before submitting an issue:
+      Try pressing ⌘-shift-k within Xcode to clear the build cache
+      and see if that fixes the issue you are having. If not, fill
+      out the parts below: --->
+
 ## Short description of the issue
 
 <!--- Provide here a short description of what is the issue. --->
