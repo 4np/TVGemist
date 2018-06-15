@@ -28,5 +28,7 @@
 ## Additional information
 
 Version you are using: ?
+
 tvOS version: ?
+
 Xcode version: ?
