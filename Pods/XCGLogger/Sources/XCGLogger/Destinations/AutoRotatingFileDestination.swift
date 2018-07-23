@@ -103,14 +103,15 @@ open class AutoRotatingFileDestination: FileDestination {
     }
 
     // MARK: - Life Cycle
-    public init(owner: XCGLogger? = nil, writeToFile: Any, identifier: String = "", shouldAppend: Bool = false, appendMarker: String? = "-- ** ** ** --", attributes: [FileAttributeKey: Any]? = nil, maxFileSize: UInt64 = autoRotatingFileDefaultMaxFileSize, maxTimeInterval: TimeInterval = autoRotatingFileDefaultMaxTimeInterval, archiveSuffixDateFormatter: DateFormatter? = nil) {
+    public init(owner: XCGLogger? = nil, writeToFile: Any, identifier: String = "", shouldAppend: Bool = false, appendMarker: String? = "-- ** ** ** --", attributes: [FileAttributeKey: Any]? = nil, maxFileSize: UInt64 = autoRotatingFileDefaultMaxFileSize, maxTimeInterval: TimeInterval = autoRotatingFileDefaultMaxTimeInterval, archiveSuffixDateFormatter: DateFormatter? = nil, targetMaxLogFiles: UInt8 = 10) {
         super.init(owner: owner, writeToFile: writeToFile, identifier: identifier, shouldAppend: true, appendMarker: shouldAppend ? appendMarker : nil, attributes: attributes)
 
         currentLogStartTimeInterval = Date().timeIntervalSince1970
         self.archiveSuffixDateFormatter = archiveSuffixDateFormatter
         self.shouldAppend = shouldAppend
-        self.targetMaxFileSize = maxFileSize
-        self.targetMaxTimeInterval = maxTimeInterval
+        self.targetMaxFileSize = maxFileSize < 1 ? .max : maxFileSize
+        self.targetMaxTimeInterval = maxTimeInterval < 1 ? 0 : maxTimeInterval
+        self.targetMaxLogFiles = targetMaxLogFiles
 
         guard let writeToFileURL = writeToFileURL else { return }
 
