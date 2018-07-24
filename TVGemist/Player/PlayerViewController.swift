@@ -23,6 +23,7 @@ class PlayerViewController: AVPlayerViewController {
     private var secondsPlayed: Double = 0.0
     private var subtitles: [SubtitleLine]?
     private var currentSubtitleLineNumber = -1
+    private var favoriteEpisode: FavoriteEpisode?
     
     // display subtitles on top of player
     lazy var subtitleLabel: UILabel = {
@@ -64,6 +65,28 @@ class PlayerViewController: AVPlayerViewController {
     }()
 }
 
+// MARK: View lifecycle
+extension PlayerViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        secondsPlayed = 0
+        favoriteEpisode = nil
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        do {
+            try favoriteEpisode?.updateWatchedDuration(to: secondsPlayed)
+        } catch {
+            log.error("Could not update watch duration to \(secondsPlayed) (\(error.localizedDescription))")
+        }
+        
+        favoriteEpisode = nil
+        secondsPlayed = 0
+    }
+}
+
 // MARK: Playback
 extension PlayerViewController {
     public func play(liveBroadcast: LiveBroadcast) {
@@ -74,7 +97,7 @@ extension PlayerViewController {
     public func play(localBroadcast: LocalBroadcast) {
         self.playbackItem = localBroadcast
         if let url = localBroadcast.url {
-            play(url: url)
+            play(url: url, beginAt: 0)
         } else {
             legacyPlay(liveStream: localBroadcast.liveStream)
         }
@@ -89,7 +112,7 @@ extension PlayerViewController {
                     return
                 }
                 
-                self?.play(url: url)
+                self?.play(url: url, beginAt: 0)
             case .failure(let error as NPOError):
                 log.error("Could not fetch legacy stream (\(error.localizedDescription))")
             case.failure(let error):
@@ -98,14 +121,17 @@ extension PlayerViewController {
         }
     }
     
-    public func play(episode: Episode) {
+    public func play(episode: Episode, of program: Program, beginAt interval: TimeInterval) {
         self.playbackItem = episode
     
         // fetch subtitles in case we need them
         fetchSubtitles(for: episode)
         
+        // fetch program from core data
+        favoriteEpisode = FavoriteManager.shared.getFavoriteEpisode(by: episode, for: program)
+        
         guard Utilities.isFairPlayEnabled else {
-            legacyPlay(episode: episode)
+            legacyPlay(episode: episode, beginAt: interval)
             return
         }
         
@@ -114,7 +140,7 @@ extension PlayerViewController {
             case .success(let fairPlayStream):
                 self?.fairPlayStream = fairPlayStream
                 //dump(fairPlayStream)
-                self?.play(url: fairPlayStream.url)
+                self?.play(url: fairPlayStream.url, beginAt: interval)
             case .failure(let error as NPOError):
                 log.error("Could not fetch playlist for episode (\(error.localizedDescription))")
             case.failure(let error):
@@ -123,12 +149,12 @@ extension PlayerViewController {
         }
     }
     
-    private func legacyPlay(episode: Episode) {
+    private func legacyPlay(episode: Episode, beginAt interval: TimeInterval) {
         // play the legacy HLS Stream
         NPOKit.shared.legacyPlaylist(for: episode) { [weak self] (result) in
             switch result {
             case .success(let legacyPlaylist):
-                self?.play(url: legacyPlaylist.url)
+                self?.play(url: legacyPlaylist.url, beginAt: interval)
             case .failure(let error as NPOError):
                 log.error("Could not fetch playlist for episode (\(error.localizedDescription))")
             case.failure(let error):
@@ -137,7 +163,13 @@ extension PlayerViewController {
         }
     }
     
-    private func play(url: URL) {
+    private func play(url: URL, beginAt interval: TimeInterval) {
+        if interval == 0 {
+            log.debug("Start playing from the beginning")
+        } else {
+            log.debug("Start playing at \(interval.timeDisplayValue)")
+        }
+        
         let asset = AVURLAsset(url: url, options: nil)
         
         let queue = DispatchQueue(label: "eu.osx.tvos.NPO.assetqueue")
@@ -148,6 +180,12 @@ extension PlayerViewController {
         let player = AVPlayer(playerItem: playerItem)
         player.actionAtItemEnd = .pause
         player.automaticallyWaitsToMinimizeStalling = true
+        
+        // seek to start?
+        if interval > 0 {
+            let seekTime = CMTimeMakeWithSeconds(interval, 1)
+            player.seek(to: seekTime, toleranceBefore: kCMTimePositiveInfinity, toleranceAfter: kCMTimeZero)
+        }
         
         // periodic observer
         let interval = CMTimeMakeWithSeconds(0.5, 60) // half a second

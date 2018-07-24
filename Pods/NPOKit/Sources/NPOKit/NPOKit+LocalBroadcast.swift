@@ -8,6 +8,7 @@
 import Foundation
 
 public extension NPOKit {
+    //swiftlint:disable:next function_body_length
     public func fetchRegionalBroadcasts(completionHandler: @escaping (Result<[LocalBroadcast]>) -> Void) {
         let broadcasts: [LocalBroadcast] = [
             LocalBroadcast(id: "AT5",

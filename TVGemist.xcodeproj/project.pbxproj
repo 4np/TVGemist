@@ -22,6 +22,11 @@
 		F36E6D2C206A827A0035192B /* LocalBroadcastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F36E6D2B206A827A0035192B /* LocalBroadcastCollectionViewCell.xib */; };
 		F3AB6CDE202CB862008A4F73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F3AB6CDC202CB862008A4F73 /* Localizable.strings */; };
 		F3B1FDB3202CADAD00AB90CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B1FDB5202CADAD00AB90CE /* Main.storyboard */; };
+		F3C52AD221061A23003A2010 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C52AD121061A23003A2010 /* FavoriteManager.swift */; };
+		F3C52AD6210738B9003A2010 /* TimeInterval+DisplayValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C52AD5210738B9003A2010 /* TimeInterval+DisplayValue.swift */; };
+		F3C52AD921073926003A2010 /* FavoriteEpisode+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C52AD821073926003A2010 /* FavoriteEpisode+helpers.swift */; };
+		F3C52ADB2107394E003A2010 /* FavoriteProgram+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C52ADA2107394E003A2010 /* FavoriteProgram+helpers.swift */; };
+		F3C52ADD21073973003A2010 /* NSManagedObject+context.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C52ADC21073973003A2010 /* NSManagedObject+context.swift */; };
 		F3C8150D202C7FEF000D4A72 /* UIImage+tinted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8150C202C7FEF000D4A72 /* UIImage+tinted.swift */; };
 		F3E2F613202EFC9600668E15 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E2F612202EFC9600668E15 /* PlayerViewController.swift */; };
 		F3FD1D582029F2450099C247 /* LoggerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD1D562029F2440099C247 /* LoggerWrapper.swift */; };
@@ -89,6 +94,11 @@
 		F3AB6CDD202CB862008A4F73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = TVGemist/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F3AB6CDF202CB874008A4F73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = TVGemist/nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F3B1FDB4202CADAD00AB90CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F3C52AD121061A23003A2010 /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
+		F3C52AD5210738B9003A2010 /* TimeInterval+DisplayValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+DisplayValue.swift"; sourceTree = "<group>"; };
+		F3C52AD821073926003A2010 /* FavoriteEpisode+helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteEpisode+helpers.swift"; sourceTree = "<group>"; };
+		F3C52ADA2107394E003A2010 /* FavoriteProgram+helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteProgram+helpers.swift"; sourceTree = "<group>"; };
+		F3C52ADC21073973003A2010 /* NSManagedObject+context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+context.swift"; sourceTree = "<group>"; };
 		F3C8150C202C7FEF000D4A72 /* UIImage+tinted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+tinted.swift"; sourceTree = "<group>"; };
 		F3E2F612202EFC9600668E15 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		F3FD1D562029F2440099C247 /* LoggerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerWrapper.swift; sourceTree = "<group>"; };
@@ -159,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				F3AB6CDC202CB862008A4F73 /* Localizable.strings */,
+				F3C52AD7210738E2003A2010 /* Favorites */,
 				F3047D9D2029F012000C48F9 /* TVGemist */,
 				F3047DB22029F012000C48F9 /* TVGemistTests */,
 				F3047DBD2029F012000C48F9 /* TVGemistUITests */,
@@ -190,7 +201,7 @@
 				F3FD1D842029F2EC0099C247 /* Player */,
 				F3BFEA05202C72E5000B668A /* Miscelaneous */,
 				F3FD1D5A2029F2530099C247 /* Extensions */,
-				F31108612029FCCE006539CA /* Resourses */,
+				F31108612029FCCE006539CA /* Resources */,
 			);
 			path = TVGemist;
 			sourceTree = "<group>";
@@ -213,14 +224,14 @@
 			path = TVGemistUITests;
 			sourceTree = "<group>";
 		};
-		F31108612029FCCE006539CA /* Resourses */ = {
+		F31108612029FCCE006539CA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				F3AB6CCC202CB5B5008A4F73 /* localizations */,
 				F3FD1D8F2029F3260099C247 /* Assets.xcassets */,
 				F3047DA22029F012000C48F9 /* TVGemist.xcdatamodeld */,
 			);
-			path = Resourses;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		F3AA2B8C202DBBCA0078E628 /* Live */ = {
@@ -267,6 +278,17 @@
 			path = Miscelaneous;
 			sourceTree = "<group>";
 		};
+		F3C52AD7210738E2003A2010 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				F3C52AD121061A23003A2010 /* FavoriteManager.swift */,
+				F3C52AD821073926003A2010 /* FavoriteEpisode+helpers.swift */,
+				F3C52ADA2107394E003A2010 /* FavoriteProgram+helpers.swift */,
+				F3C52ADC21073973003A2010 /* NSManagedObject+context.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		F3FD1D5A2029F2530099C247 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +299,7 @@
 				F3FD1D5C2029F2670099C247 /* UIView+fromNib.swift */,
 				F3FD1D5D2029F2670099C247 /* UIViewController+fromNib.swift */,
 				F3FD1D602029F2670099C247 /* UIViewController+fromStoryboard.swift */,
+				F3C52AD5210738B9003A2010 /* TimeInterval+DisplayValue.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -529,16 +552,21 @@
 				F3FD1D732029F2CC0099C247 /* FilterTableViewCell.swift in Sources */,
 				F30C5EC8202F475A001DDBEB /* LiveBroadcastCollectionViewCell.swift in Sources */,
 				F3047DA42029F012000C48F9 /* TVGemist.xcdatamodeld in Sources */,
+				F3C52ADB2107394E003A2010 /* FavoriteProgram+helpers.swift in Sources */,
 				F3FD1D622029F2670099C247 /* UIView+fromNib.swift in Sources */,
 				F3FD1D592029F2450099C247 /* Utilities.swift in Sources */,
 				F3FD1D832029F2E20099C247 /* ProgramCollectionReusableView.swift in Sources */,
 				F32B5F7D202E02C700A6BE99 /* LiveViewController.swift in Sources */,
+				F3C52AD6210738B9003A2010 /* TimeInterval+DisplayValue.swift in Sources */,
 				F3047D9F2029F012000C48F9 /* AppDelegate.swift in Sources */,
 				F3FD1D742029F2CC0099C247 /* ProgramsDetailViewController.swift in Sources */,
 				F31108602029F62E006539CA /* ProgramCollectionViewCell.swift in Sources */,
 				F3FD1D642029F2670099C247 /* UIImage+scaling.swift in Sources */,
 				F3FD1D812029F2E20099C247 /* EpisodeCollectionViewCell.swift in Sources */,
 				F3FD1D612029F2670099C247 /* String+i18n.swift in Sources */,
+				F3C52AD221061A23003A2010 /* FavoriteManager.swift in Sources */,
+				F3C52ADD21073973003A2010 /* NSManagedObject+context.swift in Sources */,
+				F3C52AD921073926003A2010 /* FavoriteEpisode+helpers.swift in Sources */,
 				F3FD1D632029F2670099C247 /* UIViewController+fromNib.swift in Sources */,
 				F3FD1D662029F2670099C247 /* UIViewController+fromStoryboard.swift in Sources */,
 				F3FD1D762029F2CC0099C247 /* ProgramsMasterViewController.swift in Sources */,

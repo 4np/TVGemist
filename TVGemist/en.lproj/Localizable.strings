@@ -14,6 +14,19 @@
 "This program is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\"%@\"" = "This program is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\"%@\"";
 "This episode is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\n\"%@\"" = "This episode is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\n\"%@\"";
 
+/* Continue Watching */
+"Continue watching" = "Continue watching";
+"You have already partially watched this episode. Would you like to continue where you left off, or do you want to start watching from the start?" = "You have already partially watched this episode. Would you like to continue where you left off, or do you want to start watching from the start?";
+"Continue watching from %@" = "Continue watching from %@";
+"Watch from the start" = "Watch from the start";
+
+/* Duration */
+"%d w" = "%d w";
+"%d d" = "%d d";
+"%d h" = "%d h";
+"%d min" = "%d min";
+"%d sec" = "%d sec";
+
 /* Live */
 "Next: %@ - %@" = "Next: %@ - %@";
 

@@ -1,6 +1,6 @@
 {
   "name": "NPOKit",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "summary": "NPOKit framework for interfacing with the Dutch Public Broadcaster",
   "homepage": "https://github.com/4np/NPOKit",
   "license": {
@@ -22,7 +22,7 @@
   },
   "source": {
     "git": "https://github.com/4np/NPOKit.git",
-    "tag": "0.0.8"
+    "tag": "0.0.9"
   },
   "source_files": "Sources/NPOKit/**/*.{swift}",
   "resource_bundles": {

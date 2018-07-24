@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="13196" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="14113" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="appleTV" orientation="landscape">
         <adaptation id="light"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EpisodeCollectionViewCell" customModule="NPO" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EpisodeCollectionViewCell" customModule="TVGemist" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="312"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -22,8 +23,14 @@
                         <constraint firstAttribute="width" secondItem="hHW-Mg-Re1" secondAttribute="height" multiplier="16:9" id="cT9-hv-nd3"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxQ-t9-raw">
-                    <rect key="frame" x="0.0" y="219" width="375" height="35"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="⚫︎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddl-i4-lrB">
+                    <rect key="frame" x="0.0" y="219" width="25" height="35"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxQ-t9-raw">
+                    <rect key="frame" x="33" y="219" width="342" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="hHN-xI-43Y"/>
                     </constraints>
@@ -43,16 +50,19 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="jxQ-t9-raw" firstAttribute="leading" secondItem="Ddl-i4-lrB" secondAttribute="trailing" constant="8" id="0xv-8T-crn"/>
                 <constraint firstAttribute="trailing" secondItem="hHW-Mg-Re1" secondAttribute="trailing" id="6TV-cv-yY9"/>
                 <constraint firstAttribute="bottom" secondItem="JFF-iM-2Gs" secondAttribute="bottom" constant="20" id="6pU-60-zDl"/>
                 <constraint firstItem="JFF-iM-2Gs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7e9-Xx-NBi"/>
                 <constraint firstItem="jxQ-t9-raw" firstAttribute="top" secondItem="hHW-Mg-Re1" secondAttribute="bottom" constant="8" id="9sJ-Hy-Ebo"/>
+                <constraint firstItem="Ddl-i4-lrB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EmV-Zt-tfM"/>
                 <constraint firstItem="hHW-Mg-Re1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JTN-Iq-rY8"/>
                 <constraint firstItem="hHW-Mg-Re1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="c2O-rc-ycU"/>
                 <constraint firstAttribute="trailing" secondItem="jxQ-t9-raw" secondAttribute="trailing" id="fxr-Zu-Fsf"/>
                 <constraint firstAttribute="trailing" secondItem="JFF-iM-2Gs" secondAttribute="trailing" id="iGs-cv-nj7"/>
+                <constraint firstItem="Ddl-i4-lrB" firstAttribute="top" secondItem="hHW-Mg-Re1" secondAttribute="bottom" constant="8" id="sgS-8v-XHi"/>
+                <constraint firstItem="JFF-iM-2Gs" firstAttribute="top" secondItem="Ddl-i4-lrB" secondAttribute="bottom" constant="8" id="xuH-9O-Dqr"/>
                 <constraint firstItem="JFF-iM-2Gs" firstAttribute="top" secondItem="jxQ-t9-raw" secondAttribute="bottom" constant="8" id="z7Z-Jx-Fnc"/>
-                <constraint firstItem="jxQ-t9-raw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zKC-LV-TJB"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -61,6 +71,7 @@
                 <outlet property="broadcastDateLabel" destination="JFF-iM-2Gs" id="QqI-L9-6tX"/>
                 <outlet property="imageView" destination="hHW-Mg-Re1" id="HQa-XQ-Bkt"/>
                 <outlet property="nameLabel" destination="jxQ-t9-raw" id="sRT-YQ-J4i"/>
+                <outlet property="watchedIndicatorLabel" destination="Ddl-i4-lrB" id="XNg-4U-9be"/>
             </connections>
             <point key="canvasLocation" x="50.5" y="121"/>
         </view>

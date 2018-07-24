@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FavoriteEpisode" representedClassName="FavoriteEpisode" syncable="YES" codeGenerationType="class">
+        <attribute name="broadcastDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="watched" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="watchedDuration" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="program" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FavoriteProgram" inverseName="episodes" inverseEntity="FavoriteProgram" syncable="YES"/>
+    </entity>
+    <entity name="FavoriteProgram" representedClassName="FavoriteProgram" syncable="YES" codeGenerationType="class">
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="watched" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="episodes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FavoriteEpisode" inverseName="program" inverseEntity="FavoriteEpisode" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="FavoriteProgram" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="FavoriteEpisode" positionX="223" positionY="-6" width="128" height="163"/>
+    </elements>
+</model>

@@ -21,7 +21,7 @@ public enum ItemType: String, Codable {
 }
 
 public struct Item: Pageable, ImageFetchable {
-    var id: String?
+    public private(set) var id: String?
     private var itemTitle: String?
     public var title: String {
         // Check if the title was defined
@@ -52,7 +52,7 @@ public struct Item: Pageable, ImageFetchable {
     var seasonNumber: Int?
     var episodeNumber: Int?
     public private(set) var episodeTitle: String?
-    var duration: TimeInterval?
+    public private(set) var duration: TimeInterval?
     
 // We don't really care about these:
 //    var sterTitle: String

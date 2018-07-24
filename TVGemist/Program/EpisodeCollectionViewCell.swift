@@ -12,6 +12,7 @@ import NPOKit
 
 class EpisodeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var watchedIndicatorLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var broadcastDateLabel: UILabel!
     
@@ -28,12 +29,18 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        resetImage()
+        watchedIndicatorLabel.text = nil
+        nameLabel.text = nil
+        broadcastDateLabel.text = nil
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         
         resetImage()
+        watchedIndicatorLabel.text = nil
         nameLabel.text = nil
         broadcastDateLabel.text = nil
     }
@@ -44,9 +51,15 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
         // determine the image frame (depending on focus)
         let imageFrame = (isFocused) ? imageView.focusedFrameGuide.layoutFrame : imageView.frame
         
+        // determine the watched indicator label frame
+        let watchedIndicatorLabelOrigin = CGPoint(x: imageFrame.origin.x, y: imageFrame.origin.y + imageFrame.height + 8.0)
+        let watchedIndicatorLabelSize = watchedIndicatorLabel.frame.size
+        let watchedIndicatorLabelFrame = CGRect(origin: watchedIndicatorLabelOrigin, size: watchedIndicatorLabelSize)
+        watchedIndicatorLabel.frame = watchedIndicatorLabelFrame
+        
         // determine the label frame
-        let labelOrigin = CGPoint(x: imageFrame.origin.x, y: imageFrame.origin.y + imageFrame.height + 8.0)
-        let labelSize = CGSize(width: imageFrame.width, height: nameLabel.frame.height)
+        let labelOrigin = CGPoint(x: imageFrame.origin.x + watchedIndicatorLabelSize.width + 8.0, y: imageFrame.origin.y + imageFrame.height + 8.0)
+        let labelSize = CGSize(width: imageFrame.width - watchedIndicatorLabelSize.width - 8.0, height: nameLabel.frame.height)
         let labelFrame = CGRect(origin: labelOrigin, size: labelSize)
         nameLabel.frame = labelFrame
         
@@ -59,8 +72,12 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
     
     // MARK: Configuration
     
-    func configure(withEpisode episode: Item) {
+    func configure(withEpisode episode: Episode, and program: Program?) {
         nameLabel.text = episode.episodeTitle ?? episode.title
+        
+        if let program = program, let favoriteEpisode = FavoriteManager.shared.getFavoriteEpisode(by: episode, for: program) {
+            watchedIndicatorLabel.text = favoriteEpisode.watchedState.asIndicator()
+        }
         
         if let broadcastDate = episode.broadcastDate {
             let dateFormatter = DateFormatter()

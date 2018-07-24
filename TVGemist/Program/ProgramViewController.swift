@@ -99,7 +99,7 @@ extension ProgramViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //swiftlint:disable:next force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeCollectionViewCell.reuseIdentifier, for: indexPath) as! EpisodeCollectionViewCell
-        cell.configure(withEpisode: episodes[indexPath.row])
+        cell.configure(withEpisode: episodes[indexPath.row], and: program)
         return cell
     }
     
@@ -140,16 +140,39 @@ extension ProgramViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let program = program else { return }
+        
         let episode = episodes[indexPath.row]
         
         // check if we can play this episode
-        if episode.isOnlyOnNPOPlus {
+        guard !episode.isOnlyOnNPOPlus else {
             // no, display a warning
             displayNPOPlusWarning(for: episode)
-        } else {
-            // play episode
-            play(episode: episodes[indexPath.row])
+            return
         }
+        
+        // determine where to start watching
+        let favoriteEpisode = FavoriteManager.shared.getFavoriteEpisode(by: episode, for: program)
+        let watched = favoriteEpisode?.watched ?? false
+        let watchedDuration = favoriteEpisode?.watchedDuration ?? 0
+        if watched || watchedDuration < 120 {
+            // start at beginning
+            play(episode: episode, beginAt: 0)
+            return
+        }
+        
+        // ask the user if we should continue watching
+        let alertController = UIAlertController(title: String.continueWatchingTitleText, message: String.continueWatchingMessageText, preferredStyle: .actionSheet)
+        let continueTitleText = String.localizedStringWithFormat(String.continueWatchingFromActionText, watchedDuration.timeDisplayValue)
+        let continueAction = UIAlertAction(title: continueTitleText, style: .default) { [weak self] (_) in
+            self?.play(episode: episode, beginAt: watchedDuration)
+        }
+        alertController.addAction(continueAction)
+        let fromBeginningAction = UIAlertAction(title: String.watchFromStartActionText, style: .default) { [weak self] (_) in
+            self?.play(episode: episode, beginAt: 0)
+        }
+        alertController.addAction(fromBeginningAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     private func displayNPOPlusWarning(for episode: Episode) {
@@ -173,10 +196,12 @@ extension ProgramViewController: UICollectionViewDelegate {
 
 // MARK: Playback
 extension ProgramViewController {
-    private func play(episode: Episode) {
+    private func play(episode: Episode, beginAt interval: TimeInterval) {
+        guard let program = program else { return }
+        
         let playerViewController = PlayerViewController()
         present(playerViewController, animated: true) {
-            playerViewController.play(episode: episode)
+            playerViewController.play(episode: episode, of: program, beginAt: interval)
         }
     }
 }

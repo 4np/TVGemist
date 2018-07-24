@@ -14,6 +14,19 @@
 "This program is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\"%@\"" = "Dit programma is exclusief beschikbaar voor NPO Start Plus abonnees en kan zodoende helaas niet worden bekeken.\n\n\"%@\"";
 "This episode is exclusively available on NPO Start Plus and hence cannot be watched.\n\n\n\"%@\"" = "Deze aflevering is exclusief beschikbaar voor NPO Start Plus abonnees en kan zodoende helaas niet worden bekeken.\n\n\n\"%@\"";
 
+/* Continue Watching */
+"Continue watching" = "Verder kijken";
+"You have already partially watched this episode. Would you like to continue where you left off, or do you want to start watching from the start?" = "U heeft deze aflevering al deels bekeken. Wilt u verder kijken vanaf het punt waar u bent gebleven of wilt u opnieuw beginnen?";
+"Continue watching from %@" = "Verder kijken vanaf %@";
+"Watch from the start" = "Bij het begin beginnen";
+
+/* Duration */
+"%d w" = "%d w";
+"%d d" = "%d d";
+"%d h" = "%d u";
+"%d min" = "%d min";
+"%d sec" = "%d sec";
+
 /* Live */
 "Next: %@ - %@" = "Straks: %@ - %@";
 
