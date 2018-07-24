@@ -169,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				F3AB6CDC202CB862008A4F73 /* Localizable.strings */,
-				F3C52AD7210738E2003A2010 /* Favorites */,
 				F3047D9D2029F012000C48F9 /* TVGemist */,
 				F3047DB22029F012000C48F9 /* TVGemistTests */,
 				F3047DBD2029F012000C48F9 /* TVGemistUITests */,
@@ -192,6 +191,7 @@
 		F3047D9D2029F012000C48F9 /* TVGemist */ = {
 			isa = PBXGroup;
 			children = (
+				F3C52AD7210738E2003A2010 /* Favorites */,
 				F3047DAA2029F012000C48F9 /* Info.plist */,
 				F3047D9E2029F012000C48F9 /* AppDelegate.swift */,
 				F3B1FDB5202CADAD00AB90CE /* Main.storyboard */,

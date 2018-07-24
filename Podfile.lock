@@ -42,7 +42,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   GHKit: 581d518e05fdae0a10ea296cb5ff2dd90649da17
-  NPOKit: 60bf0098fed54fe42bcefd356ac6e5323e38e2cf
+  NPOKit: 302eb863d758d2f395ee4f5e138e848819ba5458
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
   XCGLogger: 4fc1bc0bdd5828cb8dc8da7a843536cda1bea8f3

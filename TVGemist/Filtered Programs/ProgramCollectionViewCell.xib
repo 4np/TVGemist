@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="13196" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="14113" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="appleTV" orientation="landscape">
         <adaptation id="light"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProgramCollectionViewCell" customModule="NPO" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProgramCollectionViewCell" customModule="TVGemist" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="276"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -23,6 +24,14 @@
                         <constraint firstAttribute="width" constant="375" id="B8n-MZ-yT2"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♥︎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtY-cz-C6Z">
+                    <rect key="frame" x="8" y="16" width="27" height="36"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <color key="textColor" red="1" green="0.66858192439999997" blue="0.9140423191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="1" green="0.32988387050000001" blue="0.94439890709999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <size key="shadowOffset" width="1" height="1"/>
+                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAb-0V-c9D">
                     <rect key="frame" x="0.0" y="219" width="375" height="37"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -40,6 +49,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="zRP-DB-NcQ" secondAttribute="trailing" id="2bW-2E-9vZ"/>
+                <constraint firstItem="qtY-cz-C6Z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="DAC-IN-fJl"/>
                 <constraint firstAttribute="bottom" secondItem="HAb-0V-c9D" secondAttribute="bottom" constant="20" id="UVU-fT-V9p"/>
                 <constraint firstItem="yBp-Td-KF2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="WSm-b8-8Qf"/>
                 <constraint firstItem="zRP-DB-NcQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bhv-5u-BgK"/>
@@ -47,6 +57,7 @@
                 <constraint firstItem="zRP-DB-NcQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="io4-v6-GOz"/>
                 <constraint firstItem="HAb-0V-c9D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qdL-Qq-37A"/>
                 <constraint firstItem="HAb-0V-c9D" firstAttribute="top" secondItem="zRP-DB-NcQ" secondAttribute="bottom" constant="8" id="tfR-Or-dBx"/>
+                <constraint firstItem="qtY-cz-C6Z" firstAttribute="centerY" secondItem="yBp-Td-KF2" secondAttribute="centerY" id="vOF-3d-LSG"/>
                 <constraint firstAttribute="trailing" secondItem="yBp-Td-KF2" secondAttribute="trailing" constant="8" id="yZg-BB-ERS"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
@@ -54,6 +65,7 @@
             <viewLayoutGuide key="safeArea" id="Pmt-tb-8Ig"/>
             <connections>
                 <outlet property="channelLogoImageView" destination="yBp-Td-KF2" id="5HV-KY-axT"/>
+                <outlet property="favoriteIndicatorLabel" destination="qtY-cz-C6Z" id="hFc-gt-6rf"/>
                 <outlet property="imageView" destination="zRP-DB-NcQ" id="Bcp-rY-yBm"/>
                 <outlet property="nameLabel" destination="HAb-0V-c9D" id="eC7-D8-ApH"/>
             </connections>

@@ -12,6 +12,7 @@ import NPOKit
 
 class ProgramCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var headerImageView: UIImageView!
+    @IBOutlet weak var favoriteIndicatorLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
@@ -20,20 +21,37 @@ class ProgramCollectionReusableView: UICollectionReusableView {
     static let reuseIdentifier = "ProgramCollectionReusableViewIdentifier"
     static let size = CGSize(width: 1920, height: 600)
     
+    private var program: Program?
     private var headerImageTask: URLSessionDataTask?
     
     // MARK: Lifecycle
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        favoriteIndicatorLabel.text = nil
+        headerImageView.image = nil
+        titleLabel.text = nil
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        favoriteIndicatorLabel.text = nil
         headerImageView.image = nil
         titleLabel.text = nil
     }
     
     // MARK: Configuration
     
-    func configure(withProgram program: Item) {
+    func configure(withProgram program: Program) {
+        if let indicator = FavoriteManager.shared.getFavoriteProgram(by: program)?.indicator() {
+            favoriteIndicatorLabel.text = indicator
+        } else {
+            favoriteIndicatorLabel.text = nil
+        }
+        
+        favoriteIndicatorLabel.text = FavoriteManager.shared.getFavoriteProgram(by: program)?.indicator()
         titleLabel.text = program.title
         descriptionLabel.text = program.description
         detailsLabel.text = generateDetails(forProgram: program)

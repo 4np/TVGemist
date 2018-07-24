@@ -13,7 +13,8 @@ extension String {
         return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: withComment)
     }
     
-    static let okAlertAction = "ok".localized(withComment: "OK alert action")
+    static let okAlertAction = "Ok".localized(withComment: "OK alert action")
+    static let cancelAlertAction = "Cancel".localized(withComment: "Cancel alert action")
     
     // player
     static let continueWatchingTitleText = "Continue watching".localized(withComment: "Continue Watching alert title")

@@ -172,6 +172,11 @@ extension ProgramViewController: UICollectionViewDelegate {
             self?.play(episode: episode, beginAt: 0)
         }
         alertController.addAction(fromBeginningAction)
+        let cancelAction = UIAlertAction(title: String.cancelAlertAction, style: .cancel) { (_) in
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(cancelAction)
+        
         present(alertController, animated: true, completion: nil)
     }
     

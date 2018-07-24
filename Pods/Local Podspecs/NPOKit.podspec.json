@@ -24,10 +24,6 @@
     "git": "https://github.com/4np/NPOKit.git",
     "tag": "0.0.9"
   },
-  "source_files": "Sources/NPOKit/**/*.{swift}",
-  "resource_bundles": {
-    "NPOKit": [
-      "Sources/NPOKit/**/*.{json,png,svg}"
-    ]
-  }
+  "source_files": "Sources/**/*.{swift}",
+  "resources": "Sources/**/*.{lproj,storyboard,xcdatamodeld,xib,xcassets,json}"
 }

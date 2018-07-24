@@ -17,7 +17,7 @@ public enum WatchedState: Int {
     public func asIndicator() -> String {
         switch self {
         case .fully:
-            return ""
+            return "⚪︎"
         case.partially:
             return "๏"
         case .unwatched:

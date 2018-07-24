@@ -13,6 +13,7 @@ import NPOKit
 
 class ProgramCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var favoriteIndicatorLabel: UILabel!
     @IBOutlet weak var channelLogoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -28,12 +29,14 @@ class ProgramCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        favoriteIndicatorLabel.text = nil
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         
         resetImage()
+        favoriteIndicatorLabel.text = nil
         nameLabel.text = nil
         channelLogoImageView.image = nil
     }
@@ -43,6 +46,10 @@ class ProgramCollectionViewCell: UICollectionViewCell {
         
         // determine the image frame (depending on focus)
         let imageFrame = (isFocused) ? imageView.focusedFrameGuide.layoutFrame : imageView.frame
+        
+        // determine the favorite indicator frame
+        let favoriteIndicatorOrigin = CGPoint(x: imageFrame.origin.x + 8.0, y: imageFrame.origin.y + 8.0)
+        favoriteIndicatorLabel.frame.origin = favoriteIndicatorOrigin
         
         // determine the channel logo frame
         let channelLogoOrigin = CGPoint(
@@ -62,9 +69,15 @@ class ProgramCollectionViewCell: UICollectionViewCell {
     func configure(withProgram program: Item) {
         nameLabel.text = program.title
         
+        if let indicator = FavoriteManager.shared.getFavoriteProgram(by: program)?.indicator() {
+            favoriteIndicatorLabel.text = indicator
+        } else {
+            favoriteIndicatorLabel.text = nil
+        }
+        
         // fetch the image for this program
         getProgramImage(forProgram: program, andSize: imageView.focusedFrameGuide.layoutFrame.size)
-        
+           
         // set channel logo image
         if let logo = program.channel?.logo {
             channelLogoImageView.image = logo

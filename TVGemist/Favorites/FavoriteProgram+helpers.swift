@@ -14,6 +14,10 @@ extension FavoriteProgram {
         return [NSSortDescriptor(key: "title", ascending: true)]
     }
     
+    public func indicator() -> String? {
+        return isFavorite ? "♥︎" : ""
+    }
+    
     static var sortedFetchRequest: NSFetchRequest<FavoriteProgram> {
         let request: NSFetchRequest<FavoriteProgram> = FavoriteProgram.fetchRequest()
         request.sortDescriptors = FavoriteProgram.defaultSortDescriptors
