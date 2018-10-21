@@ -97,7 +97,7 @@ class ProgramsMasterViewController: UITableViewController {
             // handle selection state
             if let row = filter.options.index(of: defaultOption) {
                 let indexPath = IndexPath(row: row, section: section)
-                tableView.selectRow(at: indexPath, animated: false, scrollPosition: UITableViewScrollPosition.none)
+                tableView.selectRow(at: indexPath, animated: false, scrollPosition: UITableView.ScrollPosition.none)
             }
         }
         

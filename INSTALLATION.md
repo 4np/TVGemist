@@ -5,7 +5,7 @@ Unfortunately the app cannot be distributed in the AppStore as the NPO does not 
 ## Prerequisites:
 
 - an Apple TV 4th or 5th generation (the ones that have an AppStore)
-- run tvOS 10 or 11
+- run tvOS 12
 - a recent Apple Computer running macOS 10.11.x El Capitan or higher
 - a (free) Apple Developer account (signup here)
 
@@ -13,7 +13,7 @@ _Note: as of summer 2016 Apple has reduced the free Developer account provisioni
 
 ## 1. Xcode
 
-Make sure you have [Xcode 9.3](https://itunes.apple.com/nl/app/xcode/id497799835) ([alternative link](https://developer.apple.com/download/more/)) installed. Continue with the following steps when you have finished installing ```Xcode``` as the next steps require a finished installation.
+Make sure you have [Xcode 10](https://itunes.apple.com/nl/app/xcode/id497799835) ([alternative link](https://developer.apple.com/download/more/)) installed. Continue with the following steps when you have finished installing ```Xcode``` as the next steps require a finished installation.
 
 ## 2. Download the project
 

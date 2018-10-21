@@ -20,16 +20,19 @@ public struct LiveChannel: Codable, ImageFetchable {
     var type: String
     public private(set) var channel: String
     public private(set) var images: ImageContainer
-    public private(set) var liveStream: LiveStream
+    public private(set) var liveStream: LiveStream?
     var category: LiveChannelCategoryType
 
+    var player: URL?
+    var twitter: URL?
     var facebook: URL?
     var external: URL?
     var webcam: URL?
     var radio: URL?
-    var audio: URL?
+    //var audio: URL?
 
     var isMCR: Bool
+    var regionRestrictions: [String]
 
     enum CodingKeys: String, CodingKey {
         case slug
@@ -40,13 +43,16 @@ public struct LiveChannel: Codable, ImageFetchable {
         case liveStream
         case category
 
+        case player = "playerUrl"
+        case twitter = "twitterUrl"
         case facebook = "facebookUrl"
         case external = "externalUrl"
         case webcam = "webcamUrl"
         case radio = "externalRadioUrl"
-        case audio = "audioStreamUrl"
+        //case audio = "audioStreamUrl"
 
         case isMCR
+        case regionRestrictions
     }
 }
 

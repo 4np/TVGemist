@@ -410,15 +410,18 @@
 				TargetAttributes = {
 					F3047D9A2029F011000C48F9 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					F3047DAE2029F012000C48F9 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F3047D9A2029F011000C48F9;
 					};
 					F3047DB92029F012000C48F9 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F3047D9A2029F011000C48F9;
 					};
@@ -485,7 +488,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TVGemistAbstract-TVGemist/Pods-TVGemistAbstract-TVGemist-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TVGemistAbstract-TVGemist/Pods-TVGemistAbstract-TVGemist-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GHKit/GHKit.framework",
 				"${BUILT_PRODUCTS_DIR}/NPOKit/NPOKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
@@ -500,7 +503,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TVGemistAbstract-TVGemist/Pods-TVGemistAbstract-TVGemist-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TVGemistAbstract-TVGemist/Pods-TVGemistAbstract-TVGemist-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		94475DDAF9223CF9E2FD8DBD /* [CP] Check Pods Manifest.lock */ = {
@@ -683,7 +686,7 @@
 				SDKROOT = appletvos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TVOS_DEPLOYMENT_TARGET = 11.2;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
 		};
@@ -734,7 +737,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = appletvos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TVOS_DEPLOYMENT_TARGET = 11.2;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -751,8 +754,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Debug;
 		};
@@ -768,8 +772,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
 			name = Release;
 		};
@@ -784,7 +789,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemistTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVGemist.app/TVGemist";
 			};
@@ -801,7 +806,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemistTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVGemist.app/TVGemist";
 			};
@@ -817,7 +822,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemistUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TEST_TARGET_NAME = TVGemist;
 			};
@@ -833,7 +838,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.osx.ios.TVGemistUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TEST_TARGET_NAME = TVGemist;
 			};

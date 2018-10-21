@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.org/4np/NPOKit.svg?branch=master)](https://travis-ci.org/4np/NPOKit)
 [![Release](https://img.shields.io/github/release/4np/NPOKit.svg)](https://github.com/4np/NPOKit/releases/latest)
-[![Commits Since](https://img.shields.io/github/commits-since/4np/NPOKit/0.0.9.svg?maxAge=3600)](https://github.com/4np/NPOKit/commits/master)
-[![Platform](https://img.shields.io/badge/platform-tvOS%2011-green.svg?maxAge=3600)](https://developer.apple.com/tvos/)
+[![Commits Since](https://img.shields.io/github/commits-since/4np/NPOKit/1.0.0.svg?maxAge=3600)](https://github.com/4np/NPOKit/commits/master)
+[![Platform](https://img.shields.io/badge/platform-tvOS%2012-green.svg?maxAge=3600)](https://developer.apple.com/tvos/)
 [![Swift](https://img.shields.io/badge/language-Swift-ed523f.svg?maxAge=3600)](https://swift.org)
 [![codebeat badge](https://codebeat.co/badges/6fb36ab9-1143-4a7d-92e3-59fced359a99)](https://codebeat.co/projects/github-com-4np-npokit-master)
 [![Open Issues](https://img.shields.io/github/issues/4np/NPOKit.svg?maxAge=3600)](https://github.com/4np/NPOKit/issues)
@@ -21,7 +21,7 @@ Using cocoapods is the most common way of installing frameworks. Add something s
 
 ```
 source 'https://github.com/CocoaPods/Specs.git'
-platform :tvos, '11.0'
+platform :tvos, '12.0'
 use_frameworks!
 
 pod 'NPOKit', :git => 'https://github.com/4np/NPOKit.git'
@@ -32,7 +32,7 @@ pod 'NPOKit', :git => 'https://github.com/4np/NPOKit.git'
 Add the following entry to your package's dependencies:
 
 ```swift
-.package(url: "https://github.com/4np/NPOKit.git", from: "0.0.9")
+.package(url: "https://github.com/4np/NPOKit.git", from: "1.0.0")
 ```
 
 ## Command Line & Server Side usage

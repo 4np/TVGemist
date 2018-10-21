@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.org/4np/TVGemist.svg?branch=master)](https://travis-ci.org/4np/TVGemist)
 [![Release](https://img.shields.io/github/release/4np/TVGemist.svg)](https://github.com/4np/TVGemist/releases/latest)
-[![Commits Since](https://img.shields.io/github/commits-since/4np/TVGemist/0.0.5.svg?maxAge=3600)](https://github.com/4np/TVGemist/commits/master)
-[![Platform](https://img.shields.io/badge/platform-tvOS%2011.3-green.svg?maxAge=3600)](https://developer.apple.com/tvos/)
+[![Commits Since](https://img.shields.io/github/commits-since/4np/TVGemist/1.0.0.svg?maxAge=3600)](https://github.com/4np/TVGemist/commits/master)
+[![Platform](https://img.shields.io/badge/platform-tvOS%2012-green.svg?maxAge=3600)](https://developer.apple.com/tvos/)
 [![Swift](https://img.shields.io/badge/language-Swift-ed523f.svg?maxAge=3600)](https://swift.org)
 [![codebeat badge](https://codebeat.co/badges/bf954277-cb4b-40d9-8cc2-94aff9568634)](https://codebeat.co/projects/github-com-4np-tvgemist-master)
 [![Open Issues](https://img.shields.io/github/issues/4np/TVGemist.svg?maxAge=3600)](https://github.com/4np/TVGemist/issues)
@@ -11,7 +11,7 @@
 
 ```TVGemist``` is an unofficial fast native ```Uitzending Gemist``` and ```NPO Live``` application for Apple TV  developed in [Swift](https://developer.apple.com/swift/). It will allow you to browse and watch all video streams of the Nederlandse Publieke Omroep's (e.g. NPO, the Dutch public broadcaster) [Uitzending Gemist](http://www.npo.nl/uitzending-gemist) website on your Apple TV.
 
-_Note: this project is in active development, consider this alpha..._
+_Note: This summer the NPO **finally** launched their own NPO Start app, which duplicates this app. While the official app has some features this app does not, the official app also has limitations. For example you'll get commercials, and some content cannot be shown in HD quality. TVGemist **will** show all content in **Full HD** (if available), and does **not** show any **commercials**._
 
 ![App Icon](https://user-images.githubusercontent.com/1049693/36220523-34534838-11bb-11e8-8442-e3c664859ca7.gif)
 

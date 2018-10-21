@@ -12,7 +12,7 @@ import UIKit
 #endif
 
 public class GHKit {
-    open static let shared = GHKit()
+    public static let shared = GHKit()
     //swiftlint:disable:next force_unwrapping
     internal let timeoutInterval = TimeInterval(exactly: 20)!
     //swiftlint:disable:next force_unwrapping

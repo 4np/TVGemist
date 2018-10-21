@@ -90,8 +90,10 @@ extension PlayerViewController {
 // MARK: Playback
 extension PlayerViewController {
     public func play(liveBroadcast: LiveBroadcast) {
+        guard let liveStream = liveBroadcast.channel.liveStream else { return }
+        
         self.playbackItem = liveBroadcast
-        legacyPlay(liveStream: liveBroadcast.channel.liveStream)
+        legacyPlay(liveStream: liveStream)
     }
     
     public func play(localBroadcast: LocalBroadcast) {
@@ -183,12 +185,12 @@ extension PlayerViewController {
         
         // seek to start?
         if interval > 0 {
-            let seekTime = CMTimeMakeWithSeconds(interval, 1)
-            player.seek(to: seekTime, toleranceBefore: kCMTimePositiveInfinity, toleranceAfter: kCMTimeZero)
+            let seekTime = CMTimeMakeWithSeconds(interval, preferredTimescale: 1)
+            player.seek(to: seekTime, toleranceBefore: CMTime.positiveInfinity, toleranceAfter: CMTime.zero)
         }
         
         // periodic observer
-        let interval = CMTimeMakeWithSeconds(0.5, 60) // half a second
+        let interval = CMTimeMakeWithSeconds(0.5, preferredTimescale: 60) // half a second
         player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main) { [weak self] (time) in
             self?.secondsPlayed = time.seconds
             self?.displaySubtitle(at: time)
@@ -288,7 +290,7 @@ extension PlayerViewController {
             case .commonKeyArtwork:
                 guard let image = value as? UIImage else { continue }
                 metadataItem.dataType = kCMMetadataBaseDataType_JPEG as String
-                metadataItem.value = UIImageJPEGRepresentation(image, 1) as (NSCopying & NSObjectProtocol)?
+                metadataItem.value = image.jpegData(compressionQuality: 1) as (NSCopying & NSObjectProtocol)?
             default:
                 guard let text = value as? String else { continue }
                 metadataItem.value = text as (NSCopying & NSObjectProtocol)?

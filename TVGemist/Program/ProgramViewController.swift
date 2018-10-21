@@ -23,7 +23,7 @@ class ProgramViewController: UIViewController {
         super.viewDidLoad()
         
         // register suplementary views
-        collectionView.register(UINib(nibName: ProgramCollectionReusableView.nibName, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: ProgramCollectionReusableView.reuseIdentifier)
+        collectionView.register(UINib(nibName: ProgramCollectionReusableView.nibName, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProgramCollectionReusableView.reuseIdentifier)
         
         // register cells
         collectionView.register(UINib(nibName: EpisodeCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: EpisodeCollectionViewCell.reuseIdentifier)
@@ -104,12 +104,12 @@ extension ProgramViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard kind == UICollectionElementKindSectionHeader else {
+        guard kind == UICollectionView.elementKindSectionHeader else {
             fatalError("Unsupported supplementary element of kind: \(kind)")
         }
         
         //swiftlint:disable:next force_cast
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: ProgramCollectionReusableView.reuseIdentifier, for: indexPath) as! ProgramCollectionReusableView
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProgramCollectionReusableView.reuseIdentifier, for: indexPath) as! ProgramCollectionReusableView
         if let program = program {
             view.configure(withProgram: program)
         }

@@ -25,7 +25,7 @@ class ProgramsSplitViewController: UISplitViewController {
         
         // add to image view to view
         self.view.addSubview(imageView)
-        self.view.sendSubview(toBack: imageView)
+        self.view.sendSubviewToBack(imageView)
         
         return imageView
     }()
